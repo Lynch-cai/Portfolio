@@ -11,11 +11,8 @@ class Cursor{
             y: 0
         }
         const cursor_dot = {
-            x: 0,
-            y: 0,
             width: 8,
-            height: 8,
-            mouse_power: 0.05
+            height: 8
         }
         const cursor_circle = {
             x: 0,
@@ -38,11 +35,9 @@ class Cursor{
             const time = Date.now()
             const delta = time - previousTime
             previousTime = time
-            cursor_dot.x += (cursor.x - cursor_dot.x) * (cursor_dot.mouse_power * delta)
-            cursor_dot.y += (cursor.y - cursor_dot.y) * (cursor_dot.mouse_power * delta)
             cursor_circle.x += (cursor.x - cursor_circle.x) * (cursor_circle.mouse_power * delta)
             cursor_circle.y += (cursor.y - cursor_circle.y) * (cursor_circle.mouse_power * delta)
-            this.$cursor_dot.style.transform = `translate(${cursor_dot.x - cursor_dot.width/2}px, ${cursor_dot.y - cursor_dot.height/2}px)`
+            this.$cursor_dot.style.transform = `translate(${cursor.x - cursor_dot.width/2}px, ${cursor.y - cursor_dot.height/2}px)`
             this.$cursor_circle.style.transform = `translate(${cursor_circle.x - (cursor_circle.width/2) - (cursor_circle.border/2)}px, ${cursor_circle.y - (cursor_circle.height/2) - (cursor_circle.border/2)}px)`
         }
         animation_loop()
