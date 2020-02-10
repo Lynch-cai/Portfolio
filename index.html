@@ -5,34 +5,44 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Lynch Cai — Front developper</title>
-    <link rel="stylesheet" href="styles/font.css">
+    <title>Lynch Cai | Front End Developper</title>
+    <link rel="stylesheet" href="styles/fonts.css">
     <link rel="stylesheet" href="styles/cursor.css">
     <link rel="stylesheet" href="styles/header_nav.css">
     <link rel="stylesheet" href="styles/index.css">
 </head>
 <body>
-    <nav class="header_nav_container">
-        <ul>
-            <li class="header_nav_logo"><a href="#home">
-                <img src="images/logo_white.svg" alt="Logo de Lynch Cai.">
-                <span>Lynch</span>
-            </a></li>
-            <li><a href=""></a></li>
-        </ul>
-    </nav>
+    <div class="cursor_circle js-cursor_circle"></div>
+    <div class="cursor_dot js-cursor_dot"></div>
+    <header>
+        <nav class="header_nav_container">
+            <ul class="header_nav_logo_pages">
+                <li class="header_nav_logo">
+                    <a href="#home">
+                        <img src="images/logo_white.svg" alt="Logo de Lynch Cai.">
+                        <span>Lynch</span>
+                    </a>
+                </li>
+                <li class="header_nav_pages">
+                    <ul>
+                        <li><a href="">About</a></li>
+                        <li><a href="">Work</a></li>
+                        <li>—</li>
+                        <li><a href=""><img src="images/linkedin.svg" alt=""></a></li>
+                        <li><a href=""><img src="images/github.svg" alt=""></a></li>
+                        <li>
+                            <form action="mailto:contact@lynch-cai.com" target="_blank">
+                                <button type="submit"><img src="images/email.svg" alt=""></button>
+                            </form>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+        </nav>
+    </header>
+    <main>
 
-
-
-
-
-
-
-
-    <div class="cursor_container">
-        <div class="cursor_circle js-cursor_circle"></div>
-        <div class="cursor_dot js-cursor_dot"></div>
-    </div>
-    <script src="scripts/cursor_pointer.js"></script>
+    </main>
+    <script src="scripts/cursor.js"></script>
 </body>
 </html>

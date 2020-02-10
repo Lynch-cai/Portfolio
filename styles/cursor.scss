@@ -26,4 +26,10 @@
     position: absolute;
     top: 0;
     left: 0;
+    // transition: 0.3s ease transform, 0.2s cubic-bezier(0.75, -0.27, 0.3, 1.33) opacity;
+}
+
+.cursor_dot.active{
+    opacity: 0.5;
+    transform: scale(0)w
 }
