@@ -1,0 +1,1 @@
+.mouse_container{position:absolute;left:0;top:0;user-select:none;width:100vw;height:100vh;overflow:hidden}.mouse_circle{background-color:#0000000;mix-blend-mode:difference;width:30px;height:30px;border-radius:60px;border:solid white 1px;position:absolute;top:0;left:0}.mouse_dot{background-color:#4998FF;width:8px;height:8px;border-radius:10px;position:absolute;top:0;left:0}
