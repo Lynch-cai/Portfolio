@@ -1,6 +1,6 @@
 .cursor_circle{
     background-color: #00000000;
-    mix-blend-mode: difference;
+    mix-blend-mode: color-dodge;
     width: 30px;
     height: 30px;
     border-radius: 60px;
@@ -11,7 +11,7 @@
     pointer-events: none;
 }
 .cursor_dot{
-    background-color: #4998FF;
+    background-color: #E6AF2E;
     mix-blend-mode: difference;
 
     width: 8px;

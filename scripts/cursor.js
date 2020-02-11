@@ -5,7 +5,7 @@ class Cursor{
         this.cursor_active = false
         this.cursor_move()
 
-
+        this.circle_bounce_step = '01'
         this.$cursor_detect_this = document.querySelectorAll('.js-cursor_detect_this')
         this.cursor_hover()
     }
@@ -59,13 +59,6 @@ class Cursor{
 
 
 
-
-
-
-
-
-
-
             // get cursor scale (on hover)
             if(this.cursor_active){ // if cursor hover pages (Work, About, Medias)
                 // cursor_dot
@@ -73,22 +66,50 @@ class Cursor{
                 if(cursor_dot.transform_scale < 0){
                     cursor_dot.transform_scale = 0
                 }
-
                 // cursor_circle
                 this.$cursor_circle.style.border = 'none'
                 this.$cursor_circle.style.background = '#333'
-                this.$cursor_circle.style.zIndex = -1
-                if(cursor_circle.transform_scale >= 2){
-                    cursor_circle.transform_scale = 2
+                this.$cursor_circle.style.mixBlendMode = 'color-dodge'
+
+
+
+                
+                    // Bounce effect
+                // STEP 1 of the bounce effect -> Make it smaller
+                if(this.circle_bounce_step == '01' && cursor_circle.transform_scale <= 1 && cursor_circle.transform_scale >= 0.7){
+                    cursor_circle.transform_scale -= 0.02 // circle_scale power
                 }
-                else{
-                    cursor_circle.transform_scale += cursor_circle.transform_scale_power
+                // STEP 2 of the bounce effect -> Make it bigger
+                else if(cursor_circle.transform_scale <= 0.7 || this.circle_bounce_step == '02'){
+                    this.circle_bounce_step = '02'
+                    cursor_circle.transform_scale += (0.05 * cursor_circle.transform_scale) // circle_scale power
+                    if(cursor_circle.transform_scale >= 3){
+                        this.circle_bounce_step = '03'
+                    }
+                }
+                // STEP 3 of the bounce effect -> Make it smaller again
+                else if(this.circle_bounce_step == '03'){ // if circle_scale >= 3
+                    cursor_circle.transform_scale -= 0.004 * cursor_circle.transform_scale // circle_scale power
+
+                    if(cursor_circle.transform_scale <= 2.75){
+                        this.circle_bounce_step = 'stop'
+                    }
                 }
             }
 
 
 
+
+
+
+
+
+
             else{ // if cursor leave pages
+
+                // cursor circle reset
+                this.circle_bounce_step = '01'
+
                 // cursor_dot
                 if(cursor_dot.transform_scale > 1){
                     cursor_dot.transform_scale = 1
@@ -98,9 +119,10 @@ class Cursor{
                 }
 
                 // cursor_circle
+                
                 this.$cursor_circle.style.border = 'solid white 1px'
                 this.$cursor_circle.style.background = '#00000000'
-                this.$cursor_circle.style.zIndex = 0
+                this.$cursor_circle.style.mixBlendMode = 'difference'
                 if(cursor_circle.transform_scale <= 1){
                     cursor_circle.transform_scale = 1
                 }
