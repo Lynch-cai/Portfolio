@@ -60,6 +60,8 @@ li{
             display: flex;
             justify-content: center;
             align-items: center;
+            opacity: 0.5;
+            transition: opacity 0.3s cubic-bezier(0.57, -0.73, 0.34, 1.6);
             button{
                 background: none;
                 color: inherit;
@@ -75,6 +77,9 @@ li{
                 height: 16px;
                 width: 16px;
             }
+        }
+        li:hover{
+            opacity: 1;
         }
     }
 }
