@@ -10,63 +10,70 @@ li{
 .header_nav_container{
     width: 90vw;
     height: 60px;
-    margin: 80px auto;
+    margin: 40px auto;
     font-family: 'Lato', sans-serif;
     display: flex;
     align-items: center;
-    ul.header_nav_logo_pages{
-        width: 90vw;
+    justify-content: space-between;
+    // logo & text
+    .header_nav_logo{
+        font-weight: 500;
+        font-size: 22px;
+        display: flex;
+        align-items: center;
+        height: inherit;
+        display: flex;
+        justify-content: center;
+        width: 100px;
+        img{
+            max-width: 18px;
+            margin-right: 10px;
+        }
+    }
+    // pages: about & work
+    .header_nav_pages{
         display: flex;
         justify-content: space-between;
-        li.header_nav_logo{
+        align-items: center;
+        height: 100%;
+        li{
+            height: 100%;
+            width: 90px;
             a{
-                font-weight: 500;
-                font-size: 22px;
+                width: inherit;
+                height: inherit;
                 display: flex;
-                img{
-                    max-width: 18px;
-                    margin-right: 10px;
-                }
+                justify-content: center;
+                align-items: center;
             }
         }
-        li.header_nav_pages{
-            
-            ul{
-                display: flex;
-                justify-content: space-between;
-                align-items: center;
+    }
+    // medias
+    .header_nav_medias{
+        height: 100%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        li{
+            height: inherit;
+            width: 32px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            button{
+                background: none;
+                color: inherit;
+                border: none;
+                padding: 0;
+                font: inherit;
                 height: 100%;
-                li:nth-child(0n+2), li:nth-child(0n+3), li:nth-child(0n+4){
-                    margin-left: 40px;
-                }
-                li{
-                    height: 100%;
-                    display: flex;
-                    align-items: center;
-                    margin-left: 18px;
-                    font-weight: 300;
-                    font-size: 18px;
-                    a{
-                        height: 100%;
-                        display: flex;
-                        align-items: center;
-                    }
-                    button{
-                        background: none;
-                        color: inherit;
-                        border: none;
-                        padding: 0;
-                        font: inherit;
-                        outline: inherit;
-                        height: 100%;
-                        display: flex;
-                        align-items: center;
-                    }
-                    img{
-                        height: 16px;
-                        width: 16px;
-                    }
-                }
+                display: flex;
+                align-items: center;
+                justify-content: center;
+            }
+            img{
+                height: 16px;
+                width: 16px;
             }
         }
     }

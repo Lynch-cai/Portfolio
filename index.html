@@ -16,26 +16,24 @@
     <div class="cursor_dot js-cursor_dot"></div>
     <header>
         <nav class="header_nav_container">
-            <ul class="header_nav_logo_pages">
-                <li class="header_nav_logo">
-                    <a href="#home">
-                        <img src="images/logo_white.svg" alt="Logo de Lynch Cai.">
-                        <span>Lynch</span>
-                    </a>
-                </li>
-                <li class="header_nav_pages">
-                    <ul>
-                        <li><a href="">About</a></li>
-                        <li><a href="">Work</a></li>
-                        <li>—</li>
-                        <li><a href=""><img src="images/linkedin.svg" alt=""></a></li>
-                        <li><a href=""><img src="images/github.svg" alt=""></a></li>
-                        <li>
-                            <form action="mailto:contact@lynch-cai.com" target="_blank">
-                                <button type="submit"><img src="images/email.svg" alt=""></button>
-                            </form>
-                        </li>
-                    </ul>
+            <!-- logo & text-->
+            <a class="header_nav_logo" href="#home">
+                <img src="images/logo_white.svg" alt="Logo de Lynch Cai.">
+                <span>Lynch</span>
+            </a>
+            <!-- pages: about & work -->
+            <ul class="header_nav_pages js-cursor_detect_this">
+                <li><a href="">Work</a></li>
+                <li><a href="">About</a></li>
+            </ul>
+            <!-- medias -->
+            <ul class="header_nav_medias js-cursor_detect_this">
+                <li><a href=""><img src="images/linkedin.svg" alt=""></a></li>
+                <li><a href=""><img src="images/github.svg" alt=""></a></li>
+                <li>
+                    <form action="mailto:contact@lynch-cai.com" target="_blank">
+                        <button type="submit"><img src="images/email.svg" alt=""></button>
+                    </form>
                 </li>
             </ul>
         </nav>

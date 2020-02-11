@@ -1,14 +1,5 @@
-.cursor_container{
-    position: absolute;
-    left: 0;
-    top: 0;
-    user-select: none;
-    width: 100vw;
-    height: 100vh;
-    overflow: hidden;
-}
 .cursor_circle{
-    background-color: #0000000;
+    background-color: #00000000;
     mix-blend-mode: difference;
     width: 30px;
     height: 30px;
@@ -17,6 +8,7 @@
     position: absolute;
     top: 0;
     left: 0;
+    pointer-events: none;
 }
 .cursor_dot{
     background-color: #4998FF;
@@ -26,6 +18,7 @@
     position: absolute;
     top: 0;
     left: 0;
+    pointer-events: none;
     // transition: 0.3s ease transform, 0.2s cubic-bezier(0.75, -0.27, 0.3, 1.33) opacity;
 }
 
