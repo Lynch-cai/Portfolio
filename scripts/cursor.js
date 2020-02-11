@@ -117,7 +117,7 @@ class Cursor{
                 else{
                     cursor_dot.transform_scale += cursor_dot.transform_scale_power
                 }
-
+                
                 // cursor_circle
                 
                 this.$cursor_circle.style.border = 'solid white 1px'
@@ -129,6 +129,14 @@ class Cursor{
                 else{
                     cursor_circle.transform_scale -= cursor_circle.transform_scale_power
                 }
+
+
+
+                // if(cursor_circle.transform_scale >= 1){
+                //     console.log(cursor_circle.transform_scale);
+                    
+                //     cursor_circle.transform_scale -= (0.05*cursor_circle.transform_scale) // circle_scale power
+                // }
             }
 
 
