@@ -63,6 +63,7 @@ li{
             align-items: center;
             opacity: 0.5;
             transition: opacity 0.3s cubic-bezier(0.57, -0.73, 0.34, 1.6);
+            will-change: opacity;
             button{
                 background: none;
                 color: inherit;

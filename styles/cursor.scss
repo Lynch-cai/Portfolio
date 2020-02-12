@@ -1,19 +1,20 @@
 .cursor_circle{
     background-color: #00000000;
     mix-blend-mode: color-dodge;
-    width: 30px;
-    height: 30px;
+    width: 70px;
+    height: 70px;
     border-radius: 60px;
-    border: solid white 1px;
+    border: solid white 2px;
     position: absolute;
     top: 0;
     left: 0;
     pointer-events: none;
+    will-change: transform;
+    outline: 2px solid transparent;
 }
 .cursor_dot{
     background-color: #E6AF2E;
     mix-blend-mode: difference;
-
     width: 8px;
     height: 8px;
     border-radius: 10px;
@@ -21,6 +22,7 @@
     top: 0;
     left: 0;
     pointer-events: none;
+    will-change: transform;
     // transition: 0.3s ease transform, 0.2s cubic-bezier(0.75, -0.27, 0.3, 1.33) opacity;
 }
 
