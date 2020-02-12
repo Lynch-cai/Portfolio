@@ -38,7 +38,6 @@ class Cursor{
         let previousTime = Date.now()
 
         let circle_bounce_step = '00'
-
         let circle_bounce_key = 0
         let circle_bounce_reverse_key = 0
 
@@ -53,7 +52,6 @@ class Cursor{
             }
         )
 
-        
 
         // FUNCTION each frame (animation)
         const animation_loop = ()=>{
