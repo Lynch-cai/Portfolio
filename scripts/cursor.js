@@ -18,7 +18,7 @@ class Cursor{
         }
 
         const cursor_dot = {
-            width: 8,
+            width: 8, // pixel
             height: 8,
             transform_scale: 1,
             transform_scale_power: 0.10 // Higher = faster the scale of $cursor_dot will decrease when user hover a element with the class ".js-cursor_detect_this"

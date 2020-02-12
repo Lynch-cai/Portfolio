@@ -12,9 +12,11 @@
     <link rel="stylesheet" href="styles/index.css">
 </head>
 <body>
-    <div class="cursor_circle js-cursor_circle"></div>
-    <div class="cursor_dot js-cursor_dot"></div>
-    <header>
+    <div class="global_cursor">
+        <div class="cursor_circle js-cursor_circle"></div>
+        <div class="cursor_dot js-cursor_dot"></div>
+    </div>
+    <header class="global_header">
         <nav class="header_nav_container">
             <!-- logo & text-->
             <a class="header_nav_logo" href="#home">
@@ -28,8 +30,8 @@
             </ul>
             <!-- medias -->
             <ul class="header_nav_medias js-cursor_detect_this">
-                <li><a href=""><img src="images/linkedin.svg" alt=""></a></li>
-                <li><a href=""><img src="images/github.svg" alt=""></a></li>
+                <li><a target="_blank" href="https://www.linkedin.com/in/lynch-cai-b17213174/?originalSubdomain=fr"><img src="images/linkedin.svg" alt=""></a></li>
+                <li><a target="_blank" href="https://github.com/Lynchcai"><img src="images/github.svg" alt=""></a></li>
                 <li>
                     <form action="mailto:contact@lynch-cai.com" target="_blank">
                         <button type="submit"><img src="images/email.svg" alt=""></button>
@@ -39,7 +41,6 @@
         </nav>
     </header>
     <main>
-
     </main>
     <script src="scripts/cursor.js"></script>
 </body>
