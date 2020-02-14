@@ -7,6 +7,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Lynch Cai | Front End Developper</title>
     <link rel="stylesheet" href="styles/fonts.css">
+    <link rel="stylesheet" href="styles/loading_page.css">
     <link rel="stylesheet" href="styles/cursor.css">
     <link rel="stylesheet" href="styles/header_nav.css">
     <link rel="stylesheet" href="styles/index.css">
@@ -20,7 +21,7 @@
         <nav class="header_nav_container">
             <!-- logo & text-->
             <a class="header_nav_logo" href="#home">
-                <img src="images/logo_white.svg" alt="Logo de Lynch Cai.">
+                <img src="images/logo_white.svg" alt="Lynch Cai's logo.">
                 <span>Lynch</span>
             </a>
             <!-- pages: about & work -->
@@ -30,18 +31,27 @@
             </ul>
             <!-- medias -->
             <ul class="header_nav_medias js-cursor_detect_this">
-                <li><a target="_blank" href="https://www.linkedin.com/in/lynch-cai-b17213174/?originalSubdomain=fr"><img src="images/linkedin.svg" alt="Linkedin icon"></a></li>
-                <li><a target="_blank" href="https://github.com/Lynchcai"><img src="images/github.svg" alt="Github icon"></a></li>
+                <li><a target="_blank" href="https://www.linkedin.com/in/lynch-cai-b17213174/?originalSubdomain=fr"><img src="images/linkedin.svg" alt="Linkedin icon."></a></li>
+                <li><a target="_blank" href="https://github.com/Lynchcai"><img src="images/github.svg" alt="Github icon."></a></li>
                 <li>
                     <form action="mailto:contact@lynch-cai.com" target="_blank">
-                        <button type="submit"><img src="images/email.svg" alt="Email icon"></button>
+                        <button type="submit"><img src="images/email.svg" alt="Email icon."></button>
                     </form>
                 </li>
             </ul>
         </nav>
     </header>
     <main>
-
+        <div class="loading_page">
+            <div class="loading_page_container js-loading_page_container">
+                <img class="loading_page_logo js-loading_page_logo" src="images/logo_white.svg" alt="Lynch Cai's logo.">
+                <div class="loading_page_separation_bar js-loading_page_separation_bar"></div>
+                <div class="loading_page_text js-loading_page_text">
+                    <span>Developped By</span>
+                    <span>Lynch Cai</span>
+                </div>
+            </div>
+        </div>
     </main>
     <script src="scripts/cursor.js"></script>
 </body>
