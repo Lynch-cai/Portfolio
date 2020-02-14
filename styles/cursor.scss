@@ -1,32 +1,28 @@
-.cursor_circle{
-    background-color: #00000000;
-    mix-blend-mode: color-dodge;
-    width: 4.375rem;
-    height: 4.375rem;
-    border-radius: 3.75rem;
-    border: solid white 0.125rem;
-    position: absolute;
-    top: 0;
-    left: 0;
-    pointer-events: none;
-    will-change: transform;
-    outline: 0.125rem solid transparent;
-}
-.cursor_dot{
-    background-color: #E6AF2E;
-    mix-blend-mode: difference;
-    width: 0.5rem;
-    height: 0.5rem;
-    border-radius: 0.625rem;
-    position: absolute;
-    top: 0;
-    left: 0;
-    pointer-events: none;
-    will-change: transform;
-    // transition: 0.3s ease transform, 0.2s cubic-bezier(0.75, -0.27, 0.3, 1.33) opacity;
-}
-
-.cursor_dot.active{
-    opacity: 0.5;
-    transform: scale(0)
+.global_cursor{
+    .cursor_circle{
+        background-color: #00000000;
+        mix-blend-mode: color-dodge;
+        width: 4.375rem;
+        height: 4.375rem;
+        border-radius: 3.75rem;
+        border: solid white 0.125rem;
+        position: absolute;
+        top: 0;
+        left: 0;
+        pointer-events: none;
+        will-change: transform;
+        outline: 0.125rem solid transparent;
+    }
+    .cursor_dot{
+        background-color: #E6AF2E;
+        mix-blend-mode: difference;
+        width: 0.5rem;
+        height: 0.5rem;
+        border-radius: 0.625rem;
+        position: absolute;
+        top: 0;
+        left: 0;
+        pointer-events: none;
+        will-change: transform;
+    }
 }
