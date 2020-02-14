@@ -30,7 +30,7 @@ class Cursor{
             width: 70,
             height: 70,
             border: 2,
-            follow_power: 0.01, // Higher = faster the $cursor_circle follow the $cursor_dot
+            follow_power: 0.015, // Higher = faster the $cursor_circle follow the $cursor_dot
             transform_scale: 0.5, // Default = 0.5, Big = 1
             transform_scale_power: 0.01
         }

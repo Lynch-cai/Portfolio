@@ -4,9 +4,9 @@
     position: fixed;
     left: 0;
     top: 0;
+    z-index: 1000;
     .cursor_circle{
         background-color: #00000000;
-        mix-blend-mode: color-dodge;
         width: 4.375rem;
         height: 4.375rem;
         border-radius: 3.75rem;
@@ -20,7 +20,6 @@
     }
     .cursor_dot{
         background-color: #E6AF2E;
-        mix-blend-mode: difference;
         width: 0.5rem;
         height: 0.5rem;
         border-radius: 0.625rem;
