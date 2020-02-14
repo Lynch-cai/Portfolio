@@ -163,6 +163,14 @@ class Cursor{
                 }
             }
 
+            // PREVENT against infinite increase of the circle scale when user change pages
+            if(cursor_circle.transform_scale>=1.25){
+                cursor_circle.transform_scale = 0.5
+            }
+            else if(cursor_circle.transform_scale<=0.05){
+                cursor_circle.transform_scale = 0.5
+            }
+
             // APPLY cursor translate & scale
             this.$cursor_dot.style.transform = `translate(${cursor.x - cursor_dot.width/2}px, ${cursor.y - cursor_dot.height/2}px) scale(${cursor_dot.transform_scale})`
             this.$cursor_circle.style.transform = `translate(${cursor_circle.x - (cursor_circle.width/2) - (cursor_circle.border)}px, ${cursor_circle.y - (cursor_circle.height/2) - (cursor_circle.border)}px) scale(${cursor_circle.transform_scale})`
