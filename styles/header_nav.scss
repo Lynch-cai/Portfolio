@@ -9,9 +9,11 @@ li{
 
 
 .global_header{
-    margin: 2.5rem auto 0 auto;
+    padding: 2.5rem 5vw 0 5vw;
     width: 90vw;
     height: 3.75rem;
+    z-index: 1000;
+    position: fixed;
     .header_nav_container{
         width: inherit;
         height: inherit;
@@ -19,6 +21,7 @@ li{
         align-items: center;
         justify-content: space-between;
         font-family: 'Lato', sans-serif;
+        z-index: inherit;
         // logo & text
         .header_nav_logo{
             font-weight: 500;
@@ -29,6 +32,7 @@ li{
             display: flex;
             justify-content: center;
             width: 6.25rem;
+            z-index: inherit;
             img{
                 max-width: 1.125rem;
                 margin-right: 0.625rem;
@@ -36,10 +40,11 @@ li{
         }
         // pages: about & work
         .header_nav_pages{
+            height: 100%;
             display: flex;
             justify-content: space-between;
             align-items: center;
-            height: 100%;
+            z-index: inherit;
             li{
                 height: 100%;
                 width: 5.625rem;
@@ -59,6 +64,7 @@ li{
             display: flex;
             justify-content: space-between;
             align-items: center;
+            z-index: inherit;
             li{
                 height: inherit;
                 width: 2rem;
