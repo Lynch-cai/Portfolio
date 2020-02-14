@@ -1,10 +1,10 @@
 class Cursor{
     constructor(){
-        this.$cursor_dot = document.querySelector('.js-cursor_dot')
-        this.$cursor_circle = document.querySelector('.js-cursor_circle')
+        this.$cursor_container = document.querySelector('.js-global_cursor')
+        this.$cursor_dot = this.$cursor_container.querySelector('.js-cursor_dot')
+        this.$cursor_circle = this.$cursor_container.querySelector('.js-cursor_circle')
         this.cursor_active = false
         this.cursor_move()
-
         this.$cursor_detect_this = document.querySelectorAll('.js-cursor_detect_this')
         this.cursor_hover()
     }
