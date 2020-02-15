@@ -49,7 +49,20 @@
                     justify-content: center;
                     align-items: center;
                     color: white;
+                    div{
+                        overflow: hidden;
+                        height: 3rem;
+                        span{
+                            padding: 0.75rem;
+                            display: block;
+                            transition: transform 0.5s ease;
+                        }
+                    }
                 }
+                a:hover div span{
+                    transform: translateY(-3rem);
+                }
+                
             }
         }
         // medias
@@ -66,7 +79,7 @@
                 justify-content: center;
                 align-items: center;
                 opacity: 0.5;
-                transition: opacity 0.3s cubic-bezier(0.57, -0.73, 0.34, 1.6);
+                transition: opacity 0.3s ease;
                 will-change: opacity;
                 list-style: none;
                 a{
