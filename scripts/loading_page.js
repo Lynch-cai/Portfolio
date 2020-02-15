@@ -12,6 +12,7 @@ class Loading{
             this.$loading_page.style.display = 'none'
         }
         else{
+            this.$loading_page.style.display = 'flex'
             sessionStorage.setItem('stop_loading_page', '1');
             // logo scale (0 to 1)
             setTimeout(
