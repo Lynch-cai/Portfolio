@@ -54,7 +54,7 @@
                         position: relative;
                         span{
                             display: inline-block;
-                            transition: transform 0.5s cubic-bezier(1, 0, 0, 1);
+                            transition: transform 0.5s cubic-bezier(1, 0.25, 0, 0.75);
                         }
                         span:after{
                             content: attr(data_word);
