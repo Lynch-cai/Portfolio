@@ -51,18 +51,22 @@
                     color: white;
                     div{
                         overflow: hidden;
-                        height: 3rem;
+                        position: relative;
                         span{
-                            padding: 0.75rem;
-                            display: block;
-                            transition: transform 0.5s ease;
+                            display: inline-block;
+                            transition: transform 0.5s cubic-bezier(1, 0, 0, 1);
+                        }
+                        span:after{
+                            content: attr(data_word);
+                            position: absolute;
+                            top: 100%;
+                            left: 0;
                         }
                     }
                 }
                 a:hover div span{
-                    transform: translateY(-3rem);
-                }
-                
+                    transform: translateY(-100%);
+                } 
             }
         }
         // medias
