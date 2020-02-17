@@ -22,11 +22,16 @@
         background-color: #E6AF2E;
         width: 0.5rem;
         height: 0.5rem;
-        border-radius: 0.625rem;
+        // border-radius: 0.625rem;
         position: absolute;
         top: 0;
         left: 0;
         pointer-events: none;
         will-change: transform;
+        clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);
+
+
+
+
     }
 }

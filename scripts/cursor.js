@@ -5,7 +5,7 @@ class Cursor{
         this.$cursor_circle = this.$cursor_container.querySelector('.js-cursor_circle')
         this.cursor_active = false
         this.cursor_move()
-        this.$cursor_detect_this = document.querySelectorAll('.js-cursor_detect_this')
+        this.$cursor_hover = document.querySelectorAll('.js-cursor_hover')
         this.cursor_hover()
     }
     // FUNCTION Cursor movement
@@ -21,7 +21,7 @@ class Cursor{
             width: 8, // pixel
             height: 8,
             transform_scale: 1,
-            transform_scale_power: 0.10 // Higher = faster the scale of $cursor_dot will decrease when user hover a element with the class ".js-cursor_detect_this"
+            transform_scale_power: 0.10 // Higher = faster the scale of $cursor_dot will decrease when user hover a element with the class ".js-cursor_hover"
         }
 
         const cursor_circle = {
@@ -179,9 +179,9 @@ class Cursor{
         animation_loop()
     }
 
-    // FUNCTION Change cursor_active value when user hover a element with the class ".js-cursor_detect_this"
+    // FUNCTION Change cursor_active value when user hover a element with the class ".js-cursor_hover"
     cursor_hover(){ 
-        this.$cursor_detect_this.forEach((_element)=>{
+        this.$cursor_hover.forEach((_element)=>{
 
             // Enter hover
             _element.addEventListener(
