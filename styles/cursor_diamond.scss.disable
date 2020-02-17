@@ -9,24 +9,31 @@
         background-color: #00000000;
         width: 4.375rem;
         height: 4.375rem;
-        border-radius: 3.75rem;
-        border: solid white 0.125rem;
+        // border-radius: 3.75rem;
+        // border: solid white 0.125rem;
         position: absolute;
         top: 0;
         left: 0;
         pointer-events: none;
-        will-change: transform;
-        outline: 0.125rem solid transparent;
+        // will-change: transform;
+        // outline: 0.125rem solid transparent;
+        clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);
+
     }
     .cursor_dot{
         background-color: #E6AF2E;
         width: 0.5rem;
         height: 0.5rem;
-        border-radius: 0.625rem;
+        // border-radius: 0.625rem;
         position: absolute;
         top: 0;
         left: 0;
         pointer-events: none;
         will-change: transform;
+        clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);
+
+
+
+
     }
 }

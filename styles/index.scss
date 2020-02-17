@@ -69,7 +69,7 @@ html{
                 .project_view_start_arrow{
                     position: absolute;
                     left: 0;
-                    height: 0.05rem;
+                    height: 0.0625rem;
                     width: 2.8rem; // 0, 2.8rem
                     background: #E6AF2E;
 
@@ -93,7 +93,7 @@ html{
                     position: absolute;
                     right: 0;
                     .project_view_end_arrow{
-                        height: 0.05rem;
+                        height: 0.0625rem;
                         width: 4rem; // 0, 4rem
                         background: #E6AF2E; 
 
@@ -126,7 +126,71 @@ html{
         // transform: translateY(-100vh); move slider
         background: green;
     }
-    .project_scroll{
-        
+}
+.project_scroll_container{
+    position: absolute;
+    bottom: 0;
+    width: 10rem;
+    left: calc(50% - 5rem);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    .project_scroll_text{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        z-index: 1000;
+        width: 10rem;
+        height: 3rem;
+        font-family: lato;
+        font-weight: 100;
+        font-size: 1.2rem;
+        opacity: 0.5;
+        color: white;
+    }
+    .project_scroll_start_bar{
+        height: 1.5rem;
+        width: 0.0625rem;
+        background: white;
+    }
+    .project_scrolling_down_container{
+        position: relative;
+        .project_scrolling_down_mouse{
+            margin: 0.9rem 0;
+            height: 2rem;
+            width: 1rem;
+            border-radius: 99rem;
+            border: 0.0625rem solid white;
+            background: #FFFFFF00;
+        }
+        .project_scrolling_down_scroll{
+            position: absolute;
+            top: calc(50% - 0.4rem);
+            left: calc(50% - 0.0625rem/2);
+            height: 0.9rem;
+            transform-origin: top;
+            transform: scaleY(0.333);
+            width: 0.0625rem;
+            border-radius: 99rem;
+            background: white;
+        }
+        .project_scrolling_down_scroll:hover{
+            animation: scrolling_down 2s ease;
+        }
+    }
+
+    .project_scroll_end_bar{
+        height: 1.5rem;
+        width: 0.0625rem;
+        background: white;
+    }
+}
+@keyframes scrolling_down{
+    0%{
+        transform: scaleY(0.333);
+    }
+    100%{
+        transform: scaleY(1);
     }
 }
