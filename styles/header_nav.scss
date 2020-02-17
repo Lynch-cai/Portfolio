@@ -56,6 +56,7 @@
                         span{
                             display: inline-block;
                             transition: transform 0.5s cubic-bezier(1, 0.25, 0, 0.75);
+                            will-change: transform;
                         }
                         span:after{
                             content: attr(data_word);

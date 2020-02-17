@@ -92,6 +92,7 @@ html{
                     align-items: center;
                     position: absolute;
                     right: 0;
+                    will-change: transform;
                     .project_view_end_arrow{
                         height: 0.0625rem;
                         width: 4rem; // 0, 4rem
@@ -148,13 +149,13 @@ html{
         font-size: 1.2rem;
         color: white;
         transition: transform 0.5s ease;
-        will-change: transform;
         div{
             position: relative;
             overflow: hidden;
             span{
                 display: inline-block;
                 opacity: 0.5;
+                will-change: transform, opacity;
             }
             span:after{
                 content: attr(data_word);
@@ -210,7 +211,7 @@ html{
             background: white;
             animation: scrolling_down 2s ease infinite;
             opacity: 0;
-            will-change: opacity transform;
+            will-change: opacity, transform;
         }
         .project_scrolling_down_mouse:after{
             content: 'Scroll down';
@@ -224,6 +225,7 @@ html{
             font-size: 0.75rem;
             opacity: 0;
             transition: opacity 0.5s ease;
+            will-change: opacity;
         }
     }
     .project_scrolling_down_container:hover {
