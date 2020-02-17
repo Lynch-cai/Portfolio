@@ -72,10 +72,10 @@ html{
                     height: 0.0625rem;
                     width: 2.8rem; // 0, 2.8rem
                     background: #E6AF2E;
-
                     transform: scaleX(0);
                     transform-origin: left;
                     transition: transform 1s cubic-bezier(0.75, 0.01, 0.15, 0.99);
+                    will-change: transform;
                 }
                 .project_view_text{
                     font-weight: 200;
@@ -83,9 +83,9 @@ html{
                     color: white;
                     font-family: lato;
                     text-decoration: none;
-
                     transform: translateX(-2.85rem); // -2.85rem , 1.1rem
                     transition: transform 1s cubic-bezier(0.75, 0.01, 0.15, 0.99);
+                    will-change: transform;
                 }
                 .project_view_end_arrow_container{
                     display: flex;
@@ -96,10 +96,10 @@ html{
                         height: 0.0625rem;
                         width: 4rem; // 0, 4rem
                         background: #E6AF2E; 
-
                         transform: scaleX(1);
                         transform-origin: right;
                         transition: transform 1s cubic-bezier(0.75, 0.01, 0.15, 0.99);
+                        will-change: transform;
                     }
                     img{
                         height: 0.5rem;
@@ -148,6 +148,11 @@ html{
         font-size: 1.2rem;
         opacity: 0.5;
         color: white;
+        transition: opacity 0.5s ease;
+        will-change: opacity;
+    }
+    .project_scroll_text:hover{
+        opacity: 1;
     }
     .project_scroll_start_bar{
         height: 1.5rem;
@@ -166,17 +171,16 @@ html{
         }
         .project_scrolling_down_scroll{
             position: absolute;
-            top: calc(50% - 0.4rem);
+            top: calc(50% - 0.5rem);
             left: calc(50% - 0.0625rem/2);
-            height: 0.9rem;
+            height: 0.3rem;
             transform-origin: top;
-            transform: scaleY(0.333);
             width: 0.0625rem;
             border-radius: 99rem;
             background: white;
-        }
-        .project_scrolling_down_scroll:hover{
-            animation: scrolling_down 2s ease;
+            animation: scrolling_down 2s ease infinite;
+            opacity: 0;
+            will-change: opacity transform;
         }
     }
 
@@ -188,9 +192,18 @@ html{
 }
 @keyframes scrolling_down{
     0%{
-        transform: scaleY(0.333);
+        transform: translateY(0);
+        opacity: 0;
+    }
+    20%{
+        opacity: 1;
+    }
+    80%{
+        transform: translateY(0.7rem);
+        opacity: 1;
     }
     100%{
-        transform: scaleY(1);
+        transform: translateY(0.7rem);
+        opacity: 0;
     }
 }
