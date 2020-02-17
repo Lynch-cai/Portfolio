@@ -146,12 +146,37 @@ html{
         font-family: lato;
         font-weight: 100;
         font-size: 1.2rem;
-        opacity: 0.5;
         color: white;
-        transition: opacity 0.5s ease;
-        will-change: opacity;
+        transition: transform 0.5s ease;
+        will-change: transform;
+        div{
+            position: relative;
+            overflow: hidden;
+            span{
+                display: inline-block;
+                opacity: 0.5;
+            }
+            span:after{
+                content: attr(data_word);
+                position: absolute;
+                top: 100%;
+                left: 0;
+            }
+        }
+        div:nth-child(1){
+            span{
+                padding-right: 0.325rem;
+                transition: transform 0.5s cubic-bezier(1, 0.25, 0, 0.75), opacity 0.5s cubic-bezier(1, 0.25, 0, 0.75);
+            }
+        }
+        div:nth-child(2){
+            span{
+                transition: transform 0.5s cubic-bezier(1, 0.25, 0, 0.75) 0.05s, opacity 0.5s cubic-bezier(1, 0.25, 0, 0.75) 0.05s;
+            }
+        }
     }
-    .project_scroll_text:hover{
+    .project_scroll_text:hover div span{
+        transform: translateY(-100%);
         opacity: 1;
     }
     .project_scroll_start_bar{
