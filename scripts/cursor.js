@@ -188,8 +188,6 @@ class Cursor{
                 'mouseover',
                 ()=>{
                     this.cursor_active = true
-                    console.log('test');
-                    
                 }
             )
 

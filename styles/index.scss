@@ -185,7 +185,12 @@ html{
         background: white;
     }
     .project_scrolling_down_container{
+        z-index: 1000;
         position: relative;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 2rem;
         .project_scrolling_down_mouse{
             margin: 0.9rem 0;
             height: 2rem;
@@ -206,6 +211,24 @@ html{
             animation: scrolling_down 2s ease infinite;
             opacity: 0;
             will-change: opacity transform;
+        }
+        .project_scrolling_down_mouse:after{
+            content: 'Scroll down';
+            position: absolute;
+            left: 125%;
+            top: 39%;
+            width: 5rem;
+            color: white;
+            font-family: lato;
+            font-weight: 300;
+            font-size: 0.75rem;
+            opacity: 0;
+            transition: opacity 0.5s ease;
+        }
+    }
+    .project_scrolling_down_container:hover {
+        .project_scrolling_down_mouse:after{
+            opacity: 1;
         }
     }
 
