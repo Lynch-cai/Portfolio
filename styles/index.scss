@@ -43,7 +43,7 @@ html{
                 display: flex;
                 justify-content: flex-end;
                 width: 12rem;
-                font-weight: 400;
+                font-weight: 500;
                 font-size: 4rem;
             }
             .project_acronym{
@@ -52,10 +52,13 @@ html{
                 justify-content: center;
                 align-items: center;
                 padding: 0 5rem 0 5rem;
+
                 span{
                     padding: 0.25rem;
-                    font-weight: 100;
-                    font-size: 4rem;
+                    font-family: Taviraj;
+                    font-weight: 200;
+                    font-size: 5rem;
+                    line-height: 5.5rem;
                 }
             }
             .project_view_button{
@@ -78,10 +81,10 @@ html{
                     will-change: transform;
                 }
                 .project_view_text{
-                    font-weight: 200;
+                    font-weight: 300;
                     font-size: 1.2rem;
                     color: white;
-                    font-family: lato;
+                    font-family: 'lato';
                     text-decoration: none;
                     transform: translateX(-2.85rem); // -2.85rem , 1.1rem
                     transition: transform 1s cubic-bezier(0.75, 0.01, 0.15, 0.99);
@@ -145,7 +148,7 @@ html{
         width: 10rem;
         height: 3rem;
         font-family: lato;
-        font-weight: 100;
+        font-weight: 300;
         font-size: 1.2rem;
         color: white;
         transition: transform 0.5s ease;
