@@ -70,6 +70,16 @@ class Parallax{
             else if(!view_project_active && this.scale > this.scale_min){
                 this.scale -= this.scale_power * (delta/100)
             }
+
+            // PREVENT against infinite increase of the scale when user change page
+            if (this.scale > this.scale_max){
+                this.scale = this.scale_max
+            }
+            else if (this.scale < this.scale_min){
+                this.scale = this.scale_min
+            }
+
+
             
             this.$project_background.style.transform = `translate3d(${this.translateX}%, ${this.translateY}%, 0) scale(${this.scale})`
         }

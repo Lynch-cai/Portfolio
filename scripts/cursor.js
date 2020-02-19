@@ -163,7 +163,7 @@ class Cursor{
                 }
             }
 
-            // PREVENT against infinite increase of the circle scale when user change pages
+            // PREVENT against infinite increase of the circle scale when user change page
             if(cursor_circle.transform_scale>=1.25){
                 cursor_circle.transform_scale = 0.5
             }
