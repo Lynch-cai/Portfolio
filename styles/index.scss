@@ -31,6 +31,12 @@ html{
             background-size: cover;
             opacity: 0.10;
             filter: blur(10px); 
+            transition: filter 0.5s ease, transform 1s ease;
+            transform: scale(1.1);
+        }
+        .project_background.active{
+            filter: blur(0px);
+            transform: scale(1.5);
         }
         span{
             color: white;
@@ -64,8 +70,8 @@ html{
             }
             .project_view_button{
                 z-index: 1000;
-                height: 3vh;
-                width: 12rem;
+                height: 5vh;
+                width: 13.5rem;
                 display: flex;
                 align-items: center;
                 justify-content: center;
@@ -73,7 +79,7 @@ html{
                 .project_view_start_arrow{
                     position: absolute;
                     left: 0;
-                    height: 0.0625rem;
+                    height: 0.125rem;
                     width: 2.8rem; // 0, 2.8rem
                     background: #E6AF2E;
                     transform: scaleX(0);
@@ -98,7 +104,7 @@ html{
                     right: 0;
                     will-change: transform;
                     .project_view_end_arrow{
-                        height: 0.0625rem;
+                        height: 0.125rem;
                         width: 4rem; // 0, 4rem
                         background: #E6AF2E; 
                         transform: scaleX(1);
