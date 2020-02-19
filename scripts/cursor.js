@@ -81,8 +81,8 @@ class Cursor{
 
                 // Cursor circle
                 this.$cursor_circle.style.border = 'none'
-                this.$cursor_circle.style.background = '#333'
-                this.$cursor_circle.style.mixBlendMode = 'color-dodge'
+                this.$cursor_circle.style.background = '#fff'
+                this.$cursor_circle.style.opacity = '0.10'
                 // cursor_circle.transform_scale = 1
 
 
@@ -131,7 +131,7 @@ class Cursor{
                 
                 this.$cursor_circle.style.border = 'solid white 2px'
                 this.$cursor_circle.style.background = '#00000000'
-                this.$cursor_circle.style.mixBlendMode = 'difference'
+                this.$cursor_circle.style.opacity = '1'
 
 
                 // Bounce effect reverse
@@ -172,8 +172,8 @@ class Cursor{
             }
 
             // APPLY cursor translate & scale
-            this.$cursor_dot.style.transform = `translate(${cursor.x - cursor_dot.width/2}px, ${cursor.y - cursor_dot.height/2}px) scale(${cursor_dot.transform_scale})`
-            this.$cursor_circle.style.transform = `translate(${cursor_circle.x - (cursor_circle.width/2) - (cursor_circle.border)}px, ${cursor_circle.y - (cursor_circle.height/2) - (cursor_circle.border)}px) scale(${cursor_circle.transform_scale})`
+            this.$cursor_dot.style.transform = `translate3d(${cursor.x - cursor_dot.width/2}px, ${cursor.y - cursor_dot.height/2}px, 0) scale(${cursor_dot.transform_scale})`
+            this.$cursor_circle.style.transform = `translate3d(${cursor_circle.x - (cursor_circle.width/2) - (cursor_circle.border)}px, ${cursor_circle.y - (cursor_circle.height/2) - (cursor_circle.border)}px, 0) scale(${cursor_circle.transform_scale})`
 
         }
         animation_loop()
