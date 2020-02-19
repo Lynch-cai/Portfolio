@@ -14,18 +14,20 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 </head>
 <body>
+    <!-- Cursor -->
     <div class="global_cursor js-global_cursor">
         <div class="cursor_circle js-cursor_circle"></div>
         <div class="cursor_dot js-cursor_dot"></div>
     </div>
     <header class="global_header">
+        <!-- Nav bar -->
         <nav class="header_nav_container">
-            <!-- logo & text-->
+            <!-- Logo & Name -->
             <a class="header_nav_logo js-cursor_hover" href="#home">
                 <img src="images/logo_white.svg" alt="Lynch Cai's logo.">
                 <span>Lynch</span>
             </a>
-            <!-- pages: about & work -->
+            <!-- Menu -->
             <ul class="header_nav_pages js-cursor_hover">
                 <li><a href="">
                     <div>
@@ -51,6 +53,7 @@
         </nav>
     </header>
     <main>
+        <!-- Loading page -->
         <div class="loading_page js-loading_page">
             <div class="loading_page_container">
                 <img class="loading_page_logo js-loading_page_logo" src="images/logo_white.svg" alt="Lynch Cai's logo.">
@@ -62,8 +65,8 @@
             </div>
         </div>
         <div class="projects_container">
+            <!-- Project 01 - Focusly -->
             <div class="project_container">
-                <!-- Background -->
                 <div class="project_background project_background_focusly js-project_background"></div> 
                 <div class="project_content">
                     <div class="project_number">
@@ -84,10 +87,13 @@
                     </div>
                 </div>
             </div>
+            <!-- Project 02 - Bananaflix -->
             <div class="project_container pp">
                 
             </div>
+            <!-- Project 03 - Good And Human -->
         </div>
+        <!-- Scroll help bottom -->
         <div class="project_scroll_container">
             <div class="project_scroll_text js-cursor_hover">
                 <div>
@@ -101,7 +107,6 @@
             <div class="project_scrolling_down_container js-project_scrolling_down_container">
                 <div class="project_scrolling_down_mouse"></div>
                 <div class="project_scrolling_down_scroll js-project_scrolling_down_scroll"></div>
-                <!-- <div class="project_scrolling_down_help_text js-project_scrolling_down_help_text">Scroll down</div> -->
             </div>
             <div class="project_scroll_end_bar"></div>
         </div>
@@ -110,7 +115,6 @@
     <script src="scripts/loading_page.js"></script>
     <script src="scripts/project_scroll_down.js"></script>
     <script src="scripts/jquery.mousewheel.js"></script>
-    <script src="scripts/view_project.js"></script>
     <script src="scripts/parallax.js"></script>
 </body>
 </html>
