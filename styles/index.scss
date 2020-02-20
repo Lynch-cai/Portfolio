@@ -21,12 +21,14 @@ html{
         height: 120vh;
         background: #111;
         transform: translateY(0);
-        transition: transform 0.5s cubic-bezier(0.75, 0.01, 0.15, 0.99);
+        transition: transform 1.25s cubic-bezier(0.92, 0.02, 0.29, 0.88), clip-path 1.25s cubic-bezier(0.92, 0.02, 0.29, 0.88);
         will-change: transform;
         z-index: 2000;
+        clip-path: polygon(0 0, 100% 15%, 100% 100%, 0 100%);
     }
     .project_transition_page.active{
         transform: translateY(-100%);
+        clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
     }
     .project_container{
         position: relative;
