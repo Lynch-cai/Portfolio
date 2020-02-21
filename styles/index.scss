@@ -112,7 +112,7 @@ html{
                     transition: transform 0.75s cubic-bezier(0.75, 0.01, 0.15, 0.99);
                     will-change: transform;
                 }
-                .project_view_text{
+                .project_view_link{
                     font-weight: 300;
                     font-size: 1.2rem;
                     color: white;
@@ -147,7 +147,7 @@ html{
                 .project_view_start_arrow{
                     transform: scaleX(1);
                 }
-                .project_view_text{
+                .project_view_link{
                     transform: translateX(1.1rem);
                 }
                 .project_view_end_arrow{
