@@ -1,8 +1,5 @@
 class Parallax{
     constructor(){
-        this.sizes = {}
-        this.sizes.width = window.innerWidth
-        this.sizes.height = window.innerHeight
         this.ratioX = ''
         this.ratioY = ''
         this.translateX = ''
@@ -12,8 +9,7 @@ class Parallax{
         this.scale = this.scale_min
         this.scale_max = 1.45
         this.scale_power = 0.05
-        this.resize()
-        
+
         this.$project_background = document.querySelector('.js-project_background')
         this.parallax()
 
@@ -21,24 +17,13 @@ class Parallax{
         this.view_project()
     }
 
-    // RESIZE window to prevent user to change size
-    resize(){
-        window.addEventListener(
-            'resize',
-            () => {
-                this.sizes.width = window.innerWidth
-                this.sizes.height = window.innerHeight
-            }
-        )
-    }
-
     // GET user cursor position & calculate the parallax movement
     parallax(){
         document.addEventListener(
             'mousemove',
             (_event)=>{
-                this.ratioX = _event.clientX / this.sizes.width - 0.5 // give value between -0.5 & 0.5
-                this.ratioY = _event.clientY / this.sizes.height - 0.5
+                this.ratioX = _event.clientX / sizes.width - 0.5 // give value between -0.5 & 0.5
+                this.ratioY = _event.clientY / sizes.height - 0.5
                 this.translateX = this.ratioX * this.parallax_power
                 this.translateY = this.ratioY * this.parallax_power
             }
