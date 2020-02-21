@@ -1,0 +1,12 @@
+[
+    {
+        "acronym": "FCS",
+        "project_url": "https://lynchcai.github.io/Focusly/",
+        "background_url": "../images/projects/focusly/index_focusly.png"
+    },
+    {
+        "acronym": "BN",
+        "project_url": "https://lynchcai.github.io/Bananaflix/",
+        "background_url": "../images/projects/focusly/index_bananaflix.png"
+    }
+]
