@@ -7,6 +7,11 @@
     {
         "acronym": "BN",
         "project_url": "https://lynchcai.github.io/Bananaflix/",
-        "background_url": "../images/projects/focusly/index_bananaflix.png"
+        "background_url": "../images/projects/bananaflix/index_bananaflix.png"
+    },
+    {
+        "acronym": "G&H",
+        "project_url": "http://goodandhuman.ovh/",
+        "background_url": "../images/projects/goodandhuman/index_goodandhuman.png"
     }
 ]
