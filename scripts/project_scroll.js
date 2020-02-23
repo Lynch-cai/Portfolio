@@ -114,7 +114,7 @@ class Scroll{
         }
 
         // Set first project background
-        this.$project_background.style.backgroundImage = `url('${projects_info[0].background_url}')`
+        this.$project_background.style.backgroundImage = `url('${projects_info[project_number].background_url}')`
 
         // Set number of the project
         if (project_number<10) {
