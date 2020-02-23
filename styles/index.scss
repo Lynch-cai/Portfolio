@@ -15,20 +15,34 @@ html{
     position: relative;
     .project_transition_page{
         position: absolute;
-        left: 0;
-        top: 100vh;
-        width: 100vw;
-        height: 120vh;
-        background: #111;
+        left: -25vw;
+        top: 150vh;
+        width: 200vw;
+        height: 200vh;
+        // background: #111;
         transform: translateY(0);
-        transition: transform 1.25s cubic-bezier(0.92, 0.02, 0.29, 0.88), clip-path 1.25s cubic-bezier(0.92, 0.02, 0.29, 0.88);
+        transition: transform 1.75s cubic-bezier(0.88, 0.26, 0.15, 0.83), opacity 0.4s ease;
         will-change: transform;
         z-index: 2000;
-        clip-path: polygon(0 0, 100% 15%, 100% 100%, 0 100%);
     }
     .project_transition_page.active{
         transform: translateY(-100%);
-        clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+    }
+    .project_transition_page.fade_out{
+        opacity: 0;
+    }
+
+    .project_transition_page_01{
+        background: white;
+        transform: rotate(10deg);
+    }
+    .project_transition_page_02{
+        background: #E6AF2E;
+        transform: rotate(-10deg);
+    }
+    .project_transition_page_03{
+        background: #0B0E14;
+        transform: rotate(10deg);
     }
     .project_container{
         position: relative;

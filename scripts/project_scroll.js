@@ -47,7 +47,7 @@ class Scroll{
     constructor(){
         this.$projects_container = document.querySelector('.js-projects_container')
         this.$project_container = this.$projects_container.querySelector('.js-project_container')
-        this.$transition_page = this.$projects_container.querySelector('.js-project_transition_page')
+        this.$transition_page = this.$projects_container.querySelectorAll('.js-project_transition_page')
 
 
         this.$project_content = this.$project_container.querySelector('.js-project_content')
@@ -57,6 +57,7 @@ class Scroll{
         this.$project_background = this.$project_container.querySelector('.js-project_background') // change class to change background
 
         this.init()
+        this.transition_ready = true
     }
     // Check if json information is loaded
     init(){
@@ -100,32 +101,106 @@ class Scroll{
     }
     // If user scroll
     scrolling(){
-        // Remove span from last project
-        let $remove_this = this.$project_acronym.querySelectorAll('span')
-        for (let i = 0; i < $remove_this.length; i++) {
-            this.$project_acronym.removeChild($remove_this[i])
-        }
 
-        // Create span acronym for project_number
-        for (let i = 0; i < projects_info[project_number].acronym.length; i++) {
-            const letter = document.createElement('span')
-            letter.innerHTML = projects_info[project_number].acronym[i]
-            this.$project_acronym.appendChild(letter)
-        }
+        // Transition page
+        // If the transition is ready do the transition
+        if (this.transition_ready) {
+            this.$transition_page[0].classList.add('active')
+            setTimeout(
+                ()=>{
+                    this.$transition_page[1].classList.add('active')
+                }, 150
+            )
+            setTimeout(
+                ()=>{
+                    this.$transition_page[2].classList.add('active')
+                }, 300
+            )
+    
+            // Reset transition
+            setTimeout(
+                ()=>{
+                    change_page_project_info()
 
-        // Set first project background
-        this.$project_background.style.backgroundImage = `url('${projects_info[project_number].background_url}')`
+                    // Display none transition pages (0,1) & fade out (2)
+                    this.$transition_page[0].style.display = 'none'
+                    this.$transition_page[1].style.display = 'none'
+                    this.$transition_page[2].classList.add('fade_out')
 
-        // Set number of the project
-        if (project_number<10) {
-            this.$project_number.innerText = `0${project_number+1}`
-        }
-        else{
-            this.$project_number.innerText = project_number+1
-        }
 
-        // Set link of the project
-        this.$project_link.setAttribute('href', projects_info[project_number].project_url)
+                    // Display none transition pages (2)
+                    setTimeout(
+                        ()=>{
+                            this.$transition_page[2].style.display = 'none'
+                            setTimeout(
+                                ()=>{
+                                    // reset fade out (2)
+                                    this.$transition_page[2].classList.remove('fade_out')
+                                }, 250
+                            )
+                        }, 300
+                    )
+
+                    // Reset pos of transition pages (both)
+                    setTimeout(
+                        ()=>{
+                            for (let i = 0; i < this.$transition_page.length; i++) {
+                                this.$transition_page[i].classList.remove('active')
+                                
+                            }
+
+                            // Display block transition pages (both)
+                            setTimeout(
+                                ()=>{
+                                    for (let i = 0; i < this.$transition_page.length; i++) {
+                                        this.$transition_page[i].style.display = 'block'
+                                    }
+                                }, 250
+                            )
+                        }, 100
+                    )
+
+                    // Set transition ready to true
+                    setTimeout(
+                        ()=>{
+                            this.transition_ready = true
+                        },400
+                    )
+                }, 1600
+            )
+        }
+        this.transition_ready = false
+
+
+        // Change page info
+        const change_page_project_info = ()=>{
+            // Remove span from last project
+            let $remove_this = this.$project_acronym.querySelectorAll('span')
+            for (let i = 0; i < $remove_this.length; i++) {
+                this.$project_acronym.removeChild($remove_this[i])
+            }
+
+            // Create span acronym for project_number
+            for (let i = 0; i < projects_info[project_number].acronym.length; i++) {
+                const letter = document.createElement('span')
+                letter.innerHTML = projects_info[project_number].acronym[i]
+                this.$project_acronym.appendChild(letter)
+            }
+
+            // Set first project background
+            this.$project_background.style.backgroundImage = `url('${projects_info[project_number].background_url}')`
+
+            // Set number of the project
+            if (project_number<10) {
+                this.$project_number.innerText = `0${project_number+1}`
+            }
+            else{
+                this.$project_number.innerText = project_number+1
+            }
+
+            // Set link of the project
+            this.$project_link.setAttribute('href', projects_info[project_number].project_url)
+        }
     }
 }
 const scroll = new Scroll()
