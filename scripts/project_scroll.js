@@ -59,6 +59,10 @@ class Scroll{
         this.init()
         this.transition_ready = true
     }
+
+
+
+
     // Check if json information is loaded
     init(){
         setTimeout(() => {
@@ -81,6 +85,10 @@ class Scroll{
             }
         }, 100);
     }
+
+
+
+
     // If user scroll up
     up(){
         if (project_number <= projects_info.length - 1 && project_number > 0) {
@@ -90,6 +98,9 @@ class Scroll{
             project_number = projects_info.length - 1
         }
     }
+
+
+
     // If user scroll down
     down(){
         if (project_number < projects_info.length - 1) {
@@ -99,6 +110,10 @@ class Scroll{
             project_number = 0
         }
     }
+
+
+
+
     // If user scroll
     scrolling(){
 
@@ -155,17 +170,20 @@ class Scroll{
                                     for (let i = 0; i < this.$transition_page.length; i++) {
                                         this.$transition_page[i].style.display = 'block'
                                     }
+
+                                    // Set transition ready to true
+                                    setTimeout(
+                                        ()=>{
+                                            this.transition_ready = true
+                                        },50
+                                    )
+
                                 }, 250
                             )
+
                         }, 100
                     )
-
-                    // Set transition ready to true
-                    setTimeout(
-                        ()=>{
-                            this.transition_ready = true
-                        },400
-                    )
+                    
                 }, 1600
             )
         }
