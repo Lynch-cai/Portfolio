@@ -2,6 +2,7 @@
 let scroll_direction = '' // top, down, right, left
 let scroll_power = ''
 let project_number = 0
+let transition_ready = true
 
 // Fetch projects informations
 let projects_info;
@@ -15,23 +16,27 @@ window
 $(function() {
     var loghandle = function(event, delta) {
         var o = ''
-        if (event.deltaY > 0){
-            o += 'up';
-            scroll.up()
+        if (transition_ready) {
+            if (event.deltaY > 0){
+                o += 'up';
+                scroll.up()
+            }
+            else if (event.deltaY < 0){
+                o += 'down';
+                scroll.down()
+            }
+            if (event.deltaX > 0){
+                o += 'right';
+                scroll.down()
+            }
+            else if (event.deltaX < 0){
+                o += 'left';
+                scroll.up()
+            }
+            scroll_direction = o
+            scroll_power = event.deltaFactor
+            scroll.scrolling()
         }
-        else if (event.deltaY < 0){
-            o += 'down';
-            scroll.down()
-        }
-        if (event.deltaX > 0){
-            o += 'right';
-        }
-        else if (event.deltaX < 0){
-            o += 'left';
-        }
-        scroll_direction = o
-        scroll_power = event.deltaFactor
-        scroll.scrolling()
     };
     $(document)
         .mousewheel(function(event, delta) {
@@ -59,7 +64,7 @@ class Scroll{
         this.$project_scroll_text = document.querySelector('.js-project_scroll_text')
 
         this.init()
-        this.transition_ready = true
+        this.next_project()
     }
 
 
@@ -90,7 +95,6 @@ class Scroll{
 
 
 
-
     // If user scroll up
     up(){
         if (project_number <= projects_info.length - 1 && project_number > 0) {
@@ -118,11 +122,10 @@ class Scroll{
 
     // If user scroll
     scrolling(){
-
         // Transition page
         // If the transition is ready do the transition
-        if (this.transition_ready) {
-            this.transition_ready = false
+        if (transition_ready) {
+            transition_ready = false
 
             // Do the transition
             this.$transition_page[0].classList.add('active')
@@ -179,7 +182,7 @@ class Scroll{
                                     // Set transition ready to true
                                     setTimeout(
                                         ()=>{
-                                            this.transition_ready = true
+                                            transition_ready = true
                                         },50
                                     )
 
@@ -223,6 +226,18 @@ class Scroll{
             // Set link of the project
             this.$project_link.setAttribute('href', projects_info[project_number].project_url)
         }
+    }
+
+
+
+    next_project(){
+        this.$project_scroll_text.addEventListener(
+            'click',
+            ()=>{
+                this.down()
+                this.scrolling()
+            }
+        )
     }
 }
 const scroll = new Scroll()
