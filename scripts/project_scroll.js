@@ -123,6 +123,9 @@ class Scroll{
         else{
             this.$project_number.innerText = project_number+1
         }
+
+        // Set link of the project
+        this.$project_link.setAttribute('href', projects_info[project_number].project_url)
     }
 }
 const scroll = new Scroll()
