@@ -3,7 +3,6 @@ let scroll_direction = '' // top, down, right, left
 let scroll_power = ''
 let project_number = 0
 
-
 // Fetch projects informations
 let projects_info;
 window
@@ -52,13 +51,12 @@ class Scroll{
 
 
         this.$project_content = this.$project_container.querySelector('.js-project_content')
-        this.$project_number = this.$project_content.querySelector('.js-project_number') // change number
+        this.$project_number = this.$project_content.querySelector('.js-project_number span') // change number
         this.$project_acronym = this.$project_content.querySelector('.js-project_acronym')
         this.$project_link = this.$project_content.querySelector('.js-project_view_link') // change href link value
         this.$project_background = this.$project_container.querySelector('.js-project_background') // change class to change background
 
         this.init()
-        this.scrolling()
     }
     // Check if json information is loaded
     init(){
@@ -78,6 +76,7 @@ class Scroll{
                 }
                 // Set first project background
                 this.$project_background.style.backgroundImage = `url('${projects_info[0].background_url}')`
+                this.json_loaded = true
             }
         }, 100);
     }
@@ -101,42 +100,30 @@ class Scroll{
     }
     // If user scroll
     scrolling(){
-        
+        // Remove span from last project
+        let $remove_this = this.$project_acronym.querySelectorAll('span')
+        for (let i = 0; i < $remove_this.length; i++) {
+            this.$project_acronym.removeChild($remove_this[i])
+        }
 
-        // document.createElement('span')
-        // this.$project_acronym.
-        console.log(project_number);
+        // Create span acronym for project_number
+        for (let i = 0; i < projects_info[project_number].acronym.length; i++) {
+            const letter = document.createElement('span')
+            letter.innerHTML = projects_info[project_number].acronym[i]
+            this.$project_acronym.appendChild(letter)
+        }
+
+        // Set first project background
+        this.$project_background.style.backgroundImage = `url('${projects_info[0].background_url}')`
+
+        // Set number of the project
+        if (project_number<10) {
+            this.$project_number.innerText = `0${project_number+1}`
+        }
+        else{
+            this.$project_number.innerText = project_number+1
+        }
     }
-
-
-
-
-
-
-
-
-
-
-    // left(){
-    //     if (project_number < this.$project_container.length - 1) {
-    //         project_number += 1
-    //         project_pos += sizes.height
-    //     }
-    //     else{
-    //         project_number = 0
-    //         project_pos = 0
-    //     }
-    // }
-    // right(){
-    //     if (project_number < this.$project_container.length - 1) {
-    //         project_number += 1
-    //         project_pos += sizes.height
-    //     }
-    //     else{
-    //         project_number = 0
-    //         project_pos = 0
-    //     }
-    // }
 }
 const scroll = new Scroll()
 
