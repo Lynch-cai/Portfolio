@@ -56,6 +56,8 @@ class Scroll{
         this.$project_link = this.$project_content.querySelector('.js-project_view_link') // change href link value
         this.$project_background = this.$project_container.querySelector('.js-project_background') // change class to change background
 
+        this.$project_scroll_text = document.querySelector('.js-project_scroll_text')
+
         this.init()
         this.transition_ready = true
     }
@@ -120,6 +122,9 @@ class Scroll{
         // Transition page
         // If the transition is ready do the transition
         if (this.transition_ready) {
+            this.transition_ready = false
+
+            // Do the transition
             this.$transition_page[0].classList.add('active')
             setTimeout(
                 ()=>{
@@ -153,7 +158,7 @@ class Scroll{
                                     this.$transition_page[2].classList.remove('fade_out')
                                 }, 250
                             )
-                        }, 300
+                        }, 300 // opacity transition time
                     )
 
                     // Reset pos of transition pages (both)
@@ -183,11 +188,10 @@ class Scroll{
 
                         }, 100
                     )
-                    
+
                 }, 1600
             )
         }
-        this.transition_ready = false
 
 
         // Change page info
