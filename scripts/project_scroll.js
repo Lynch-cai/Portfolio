@@ -58,7 +58,7 @@ class Scroll{
         this.$project_content = this.$project_container.querySelector('.js-project_content')
         this.$project_number = this.$project_content.querySelector('.js-project_number span') // change number
         this.$project_acronym = this.$project_content.querySelector('.js-project_acronym')
-        this.$project_link = this.$project_content.querySelector('.js-project_view_link') // change href link value
+        this.$project_link = this.$project_content.querySelector('.js-project_view_button') // change href link value
         this.$project_background = this.$project_container.querySelector('.js-project_background') // change class to change background
 
         this.$project_scroll_text = document.querySelector('.js-project_scroll_text')

@@ -62,7 +62,7 @@ html{
             background-size: cover;
             object-fit: cover;
             opacity: 0.10;
-            filter: blur(1rem) grayscale(20%); 
+            filter: blur(0.2rem) grayscale(20%); 
             transform: scale(1.15);
             transition: filter 0.4s ease-in-out, opacity 1s ease-in-out;
             will-change: opacity, transform, filter;
@@ -109,6 +109,7 @@ html{
                 align-items: center;
                 justify-content: center;
                 position: relative;
+                text-decoration: none;
                 .project_view_start_arrow{
                     position: absolute;
                     left: 0;
@@ -120,7 +121,7 @@ html{
                     transition: transform 0.75s cubic-bezier(0.75, 0.01, 0.15, 0.99);
                     will-change: transform;
                 }
-                .project_view_link{
+                .project_view_text{
                     font-weight: 300;
                     font-size: 1.2rem;
                     color: white;
@@ -155,7 +156,7 @@ html{
                 .project_view_start_arrow{
                     transform: scaleX(1);
                 }
-                .project_view_link{
+                .project_view_text{
                     transform: translateX(1.1rem);
                 }
                 .project_view_end_arrow{

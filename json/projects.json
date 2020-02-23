@@ -5,13 +5,18 @@
         "background_url": "../images/projects/focusly/index_focusly.png"
     },
     {
-        "acronym": "BN",
-        "project_url": "https://lynchcai.github.io/Bananaflix/",
-        "background_url": "../images/projects/bananaflix/index_bananaflix.jpg"
+        "acronym": "JH",
+        "project_url": "https://www.jeanhuleu.fr/",
+        "background_url": "../images/projects/jeanhuleu/index_jeanhuleu.jpg"
     },
     {
         "acronym": "G&H",
         "project_url": "http://goodandhuman.ovh/",
-        "background_url": "../images/projects/goodandhuman/index_goodandhuman.png"
+        "background_url": "../images/projects/goodandhuman/index_goodandhuman.jpg"
+    },
+    {
+        "acronym": "BN",
+        "project_url": "https://lynchcai.github.io/Bananaflix/",
+        "background_url": "../images/projects/bananaflix/index_bananaflix.jpg"
     }
 ]
