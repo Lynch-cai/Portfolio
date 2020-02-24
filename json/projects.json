@@ -5,9 +5,14 @@
         "background_url": "../images/projects/focusly/index_focusly.png"
     },
     {
-        "acronym": "JH",
-        "project_url": "https://www.jeanhuleu.fr/",
-        "background_url": "../images/projects/jeanhuleu/index_jeanhuleu.jpg"
+      "acronym": "JH",
+      "project_url": "https://www.jeanhuleu.fr/",
+      "background_url": "../images/projects/jeanhuleu/index_jeanhuleu.jpg"
+    },
+    {
+        "acronym": "CCL",
+        "project_url": "https://www.chocolia.eu/",
+        "background_url": "../images/projects/chocolia/index_chocolia.jpg"
     },
     {
         "acronym": "G&H",
@@ -15,7 +20,7 @@
         "background_url": "../images/projects/goodandhuman/index_goodandhuman.jpg"
     },
     {
-        "acronym": "BN",
+        "acronym": "BF",
         "project_url": "https://lynchcai.github.io/Bananaflix/",
         "background_url": "../images/projects/bananaflix/index_bananaflix.jpg"
     }
