@@ -65,6 +65,7 @@ class Scroll{
 
         this.init()
         this.next_project()
+        this.mobile_up()
     }
 
 
@@ -239,6 +240,42 @@ class Scroll{
             }
         )
     }
+    
+    mobile_up(){
+        let touchstart_pos_x
+        let touchstart_pos_y
+        let touchmove_pos_x
+        let touchmove_pos_y
+        document.addEventListener(
+            'touchstart',
+            (_event)=>{
+                touchstart_pos_x = _event.touches[0].clientX
+                touchstart_pos_y = _event.touches[0].clientY
+            }
+        )
+        document.addEventListener(
+            'touchmove',
+            (_event) => {
+                touchmove_pos_x = _event.touches[0].clientX
+                touchmove_pos_y = _event.touches[0].clientY
+                if(Math.abs(touchstart_pos_x) < Math.abs(touchmove_pos_x)){
+                  console.log('left to right')
+                }
+                else if(touchstart_pos_x > touchmove_pos_x){
+                  console.log('right to left')
+                }
+                else{
+                  if(touchstart_pos_y < touchmove_pos_y){
+                    console.log('up to down')
+                  }
+                  else if(touchstart_pos_y > touchmove_pos_y){
+                    console.log('down to up')
+                  }
+                }
+            }
+        )
+    }
+    
 }
 const scroll = new Scroll()
 
