@@ -258,11 +258,11 @@ class Scroll{
             (_event) => {
                 touchmove_pos_x = _event.touches[0].clientX
                 touchmove_pos_y = _event.touches[0].clientY
-                let diff_pos_x = touchstart_pos_x - touchstart_pos_y
+                let diff_pos_x = touchstart_pos_x - touchmove_pos_x
                 let diff_pos_y = touchstart_pos_y - touchmove_pos_y
                 if(Math.abs(diff_pos_x) > Math.abs(diff_pos_y)){
                   if(diff_pos_x < 0){
-                  console.log('left to right')
+                    console.log('left to right')
                   }
                   else{
                     console.log('right to left')
