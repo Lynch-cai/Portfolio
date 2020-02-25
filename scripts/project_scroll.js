@@ -65,7 +65,7 @@ class Scroll{
 
         this.init()
         this.next_project()
-        this.mobile_up()
+        this.mobile_touch()
     }
 
 
@@ -241,7 +241,7 @@ class Scroll{
         )
     }
     
-    mobile_up(){
+    mobile_touch(){
         let touchstart_pos_x
         let touchstart_pos_y
         let touchmove_pos_x
