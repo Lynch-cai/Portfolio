@@ -280,7 +280,6 @@ class Scroll{
             }
         )
     }
-    
 }
 const scroll = new Scroll()
 
