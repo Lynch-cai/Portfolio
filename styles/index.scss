@@ -21,7 +21,7 @@ html{
         height: 200vh;
         // background: #111;
         transform: translateY(0);
-        transition: transform 1.75s cubic-bezier(0.88, 0.26, 0.15, 0.83), opacity 0.3s ease-in-out;
+        transition: transform 1.75s cubic-bezier(0.25, 0.75, 0.15, 0.85), opacity 0.3s ease-in-out;
         will-change: transform;
         z-index: 2000;
     }

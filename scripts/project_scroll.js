@@ -188,7 +188,7 @@ class Scroll {
                   setTimeout(
                     () => {
                       transition_ready = true
-                    }, 50
+                    }, 500
                   )
 
                 }, 250
@@ -197,7 +197,7 @@ class Scroll {
             }, 100
           )
 
-        }, 1600
+        }, 1000
       )
     }
 
