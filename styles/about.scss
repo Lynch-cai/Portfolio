@@ -1,0 +1,19 @@
+html{
+    background: #0B0E14;
+    height: 100%;
+}
+
+.about_container{
+    width: 90vw;
+    margin: 0 auto;
+    .big_profile_img{
+        width: 400px;
+        height: 600px;
+        margin: 20vh 0 0 10vw;
+        img{
+            width: inherit;
+            height: inherit;
+            object-fit: cover;
+        }
+    }
+}
