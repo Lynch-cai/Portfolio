@@ -1,1 +1,1 @@
-html{background:#0B0E14;height:100%}.about_container{width:90vw;margin:0 auto}.about_container .big_profile_img{width:400px;height:600px;margin:20vh 0 0 10vw}.about_container .big_profile_img img{width:inherit;height:inherit;object-fit:cover}
+html{background:#0B0E14;height:100%}.about_container{width:90vw;margin:0 auto}.about_container .big_profile_img{width:400px;height:600px;margin:20vh 0 0 10vw;z-index:1000 !important;color:white}.about_container .big_profile_img img{width:inherit;height:inherit;object-fit:cover}
