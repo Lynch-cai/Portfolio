@@ -6,29 +6,59 @@ html{
 .about_container{
     width: 90vw;
     margin: 0 auto;
+    display: flex;
+    justify-content: center;
     // z-index: 1000;
-    .big_profile_img{
+
+    .welcome_container{
         position: relative;
-        width: 400px;
-        height: 600px;
-        margin: 20vh 0 0 10vw;
-        color: white;
-        img{
+        margin-top: 8.75rem;
+        width: 100%;
+        max-width: 64rem;
+        .welcome_profile_img{
             position: relative;
-            width: inherit;
-            height: inherit;
-            object-fit: cover;
-            z-index: 999;
+            width: 31.25rem;
+            height: 70vh;
+            color: white;
+            img{
+                position: relative;
+                width: inherit;
+                height: inherit;
+                object-fit: cover;
+                z-index: 999;
+            }
+            .img_cursor_detection{
+                position: absolute;
+                top: 0;
+                left: 0;
+                z-index: 1000;
+                width: inherit;
+                height: inherit;
+                background-color: #ffffff05;
+            }
         }
-        .img_cursor_detection{
+        .welcome_text{
             position: absolute;
-            top: 0;
-            left: 0;
-            z-index: 1000;
-            width: inherit;
-            height: inherit;
-            background-color: #ffffff05;
+            top: 10vh;
+            left: 17.5rem;
+            z-index: 1001;
+            font-family: lato;
+            .welcome_title{
+                display: flex;
+                flex-direction: column;
+                span{
+                    color: white;
+                    font-size: 6rem;
+                }
+            }
+            .welcome_description{
+                span{
+                    color: white;
+                    font-size: 1.5rem;
+                }
+            }
         }
+
     }
 }
 
