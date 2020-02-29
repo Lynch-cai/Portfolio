@@ -6,17 +6,29 @@ html{
 .about_container{
     width: 90vw;
     margin: 0 auto;
+    // z-index: 1000;
     .big_profile_img{
+        position: relative;
         width: 400px;
         height: 600px;
         margin: 20vh 0 0 10vw;
-        z-index: 1000 !important;
-        // background: white;
         color: white;
         img{
+            position: relative;
             width: inherit;
             height: inherit;
             object-fit: cover;
+            z-index: 999;
+        }
+        .img_cursor_detection{
+            position: absolute;
+            top: 0;
+            left: 0;
+            z-index: 1000;
+            width: inherit;
+            height: inherit;
+            background-color: #ffffff05;
         }
     }
 }
+
