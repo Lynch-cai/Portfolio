@@ -20,12 +20,18 @@ html
             width: 31.25rem
             height: 40.625rem
             color: white
-            img
+
+            .profile_img_container
                 position: relative
                 width: inherit
                 height: inherit
                 object-fit: cover
                 z-index: 999
+                overflow: hidden
+                img
+                    transform: translateY(-3.125rem)
+                    height: calc(inherit + 6.25rem)
+
             .img_cursor_detection
                 position: absolute
                 top: 0
@@ -34,16 +40,17 @@ html
                 width: inherit
                 height: inherit
                 background-color: #ffffff05
-        .welcome_text
-            position: absolute
-            top: 10rem
-            right: 4rem
-            z-index: 1001
-            font-family: lato
-            font-weight: 300
-            .welcome_title
-                display: flex
-                flex-direction: column
-                span
-                    color: white
-                    font-size: 5.5rem
+            .welcome_text
+                position: absolute
+                width: 50vw
+                top: 10rem
+                left: 8rem
+                z-index: 1001
+                font-family: lato
+                font-weight: 600
+                .welcome_title
+                    display: flex
+                    flex-direction: column
+                    span
+                        color: white
+                        font-size: 5.5rem
