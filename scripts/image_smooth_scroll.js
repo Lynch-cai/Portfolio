@@ -1,12 +1,3 @@
-
-
-
-
-
-
-
-
-
 class SmoothScroll{
     constructor($img_container){
         this.$img_container = document.querySelector(`.${$img_container}`)
@@ -14,74 +5,58 @@ class SmoothScroll{
         this.init()
     }
     init(){
-        let scroll_last_pos = 0
-        let ticking = false
 
-        const img_scroll = (raw_scroll_pos)=>{
+        
+        // Smooth image movement
+        const img_scroll = ()=>{
+            // GET image height & y pos
             const img_container_bounding = this.$img_container.getBoundingClientRect()
             const img_bounding = this.$img.getBoundingClientRect()
-
 
             const height_diff = img_bounding.height - img_container_bounding.height
 
 
-
-            // Detect if the img is on user screen
+            // DETECT if the img is on user screen
             const img_appear = img_container_bounding.y - sizes.height // img appear when this value = 0
             const img_disappear = img_container_bounding.y + img_container_bounding.height // img disappear when this value = 0
 
             if((img_appear <= 0 && img_disappear >= 0) || (img_disappear <= 0 && img_appear >= 0)){
                 const img_diff = Math.abs(img_appear) + Math.abs(img_disappear)
-                const img_strength = 1/Math.abs(img_appear)
-                console.log(img_strength);
+
+                const img_translate_strength = -0.5+(Math.abs(img_appear)/img_diff)
+                const img_movement = img_translate_strength*height_diff
+
+                const img_scale_strength = 4 // lower value = higher scale
+                const img_scale = 1+(Math.abs(img_appear)/img_diff)/img_scale_strength
+                
+                this.$img.style.transform = `translateY(${img_movement}px) scale(${img_scale})`
+
                 
             }
-
-
-            // console.log(img_diff);
-            
-            if(img_disappear <= 0){
-                // const scroll_strength =
-            }
-            // const scroll_pos = raw_scroll_pos - img_appear
-            console.log(img_appear)
-            // console.log(img_disappear)
-
-
-            
-
-
-            // const scroll_strength = -0.5 + (scroll_pos / sizes.height)
-            // const scroll_movement = scroll_strength*height_diff*2
-            // console.log(scroll_movement);
-
-
-
-            // this.$img.style.transform = `translateY(${scroll_movement}px)`
-            // console.log(scroll_strength);
-            
         }
 
 
 
-
-
-
-
-
-
-
-        
-        window.addEventListener('scroll', function(e) {
-            scroll_last_pos = window.scrollY
-            if (!ticking) {
-            window.requestAnimationFrame(function() {
-                img_scroll(scroll_last_pos)
-                ticking = false
-            })
+        // DETECT Scroll
+        let scroll_last_pos = 0
+        let ticking = false
+        window.addEventListener(
+            'scroll', 
+            (e)=> {
+                if (!ticking) {
+                    window.requestAnimationFrame(
+                        ()=>{
+                            img_scroll()
+                            ticking = false
+                        }
+                    )
+                }
+                ticking = true
             }
-            ticking = true
-        })
+        )
+
+        // Init
+        img_scroll()
     }
 }
 
