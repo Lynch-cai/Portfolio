@@ -5,6 +5,11 @@
         "background_url": "../images/projects/focusly/index_focusly.png"
     },
     {
+        "acronym": "POP",
+        "project_url": "https://lynchcai.github.io/Popup/",
+        "background_url": "../images/projects/popup/index_popup.jpg"
+    },
+    {
         "acronym": "JH",
         "project_url": "https://www.jeanhuleu.fr/",
         "background_url": "../images/projects/jeanhuleu/index_jeanhuleu.jpg"
