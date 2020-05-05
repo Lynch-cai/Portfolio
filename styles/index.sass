@@ -269,13 +269,15 @@ html
     left: 0
     height: 10px
     width: 100vw
-    background: blue
+    background: #0B0E14
     display: flex
     justify-content: flex-start
     .project_progression_bar_active
-        width: 30vw
         height: 10px
-        background: red
+        background: #E6AF2E
+        opacity: 0
+        &.active
+            opacity: 1
 @keyframes scrolling_down
     0%
         transform: translateY(0)
