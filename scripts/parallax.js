@@ -8,8 +8,8 @@ class Parallax{
         this.parallax_follow_power = 0.010
         this.scale_min = 1.15
         this.scale = this.scale_min
-        this.scale_max = 1.45
-        this.scale_power = 0.08
+        this.scale_max = 1.30
+        this.scale_power = 0.015
 
         this.$project_background = document.querySelector('.js-project_background')
         this.parallax()
