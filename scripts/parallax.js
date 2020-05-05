@@ -2,9 +2,10 @@ class Parallax{
     constructor(){
         this.ratioX = ''
         this.ratioY = ''
-        this.translateX = ''
-        this.translateY = ''
-        this.parallax_power = '-10'
+        this.translateX = 0
+        this.translateY = 0
+        this.parallax_power = -15
+        this.parallax_follow_power = 0.010
         this.scale_min = 1.15
         this.scale = this.scale_min
         this.scale_max = 1.45
@@ -17,15 +18,13 @@ class Parallax{
         this.view_project()
     }
 
-    // GET user cursor position & calculate the parallax movement
+    // GET the ratio from the user cursor position 
     parallax(){
         document.addEventListener(
             'mousemove',
             (_event)=>{
-                this.ratioX = _event.clientX / sizes.width - 0.5 // give value between -0.5 & 0.5
-                this.ratioY = _event.clientY / sizes.height - 0.5
-                this.translateX = this.ratioX * this.parallax_power
-                this.translateY = this.ratioY * this.parallax_power
+                this.ratioX = (_event.clientX - (sizes.width/2))/sizes.width // give value between -0.5 & 0.5
+                this.ratioY = (_event.clientY - (sizes.height/2))/sizes.height
             }
         )
     }
@@ -45,6 +44,12 @@ class Parallax{
             const time = Date.now()
             const delta = time - previousTime
             previousTime = time
+
+
+            // Calculate parallax movement
+            this.translateX += ((this.ratioX * this.parallax_power) - this.translateX) * (this.parallax_follow_power * delta)
+            this.translateY += ((this.ratioY * this.parallax_power) - this.translateY) * (this.parallax_follow_power * delta)
+
 
             // if user hover "View project", increase scale
             if (view_project_active && this.scale < this.scale_max){
