@@ -56,7 +56,7 @@ html
 
         .project_background.active
             filter: blur(0px)
-            opacity: 0.5
+            opacity: 0.2
 
         span
             color: white
@@ -261,6 +261,21 @@ html
         height: 1.5rem
         width: 0.0625rem
         background: white
+
+
+.project_progression_bar_container
+    position: absolute
+    bottom: 0
+    left: 0
+    height: 10px
+    width: 100vw
+    background: blue
+    display: flex
+    justify-content: flex-start
+    .project_progression_bar_active
+        width: 30vw
+        height: 10px
+        background: red
 @keyframes scrolling_down
     0%
         transform: translateY(0)
