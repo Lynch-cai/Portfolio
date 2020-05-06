@@ -264,28 +264,33 @@ html
 
 
 .project_progression_bar_container
-    position: absolute
+    position: fixed
     bottom: 0
     left: 0
-    height: 10px
+    height: 0.2rem
     width: 100vw
-    background: #0B0E14
     display: flex
+    z-index: 1100
+    background: #0B0E14
     justify-content: flex-start
     .project_progression_bar_element
-        height: 10px
-        background: red
-        opacity: 0
+        position: absolute
+        left: 0
+        bottom: 0
+        height: 0.2rem
+        padding-top: 1.5rem
+        opacity: 1
+        z-index: 1000
 .project_progression_bar
     --number_of_project: 0
     --project_number: 0
-    position: absolute
-    z-index: 9999
+    position: fixed
+    z-index: 1100
     bottom: 0
     left: -100vw
     transform: translate3d((calc((100vw/var(--number_of_project)*var(--project_number)))), 0, 0)
     transition: transform 0.75s cubic-bezier(0.75, 0.01, 0.15, 0.99)
-    height: 10px
+    height: 0.2rem
     width: 100vw
     background: #E6AF2E
 @keyframes scrolling_down

@@ -253,41 +253,28 @@ class Scroll {
         for(const key in projects_info){
             let element = document.createElement('div')
             element.classList.add('project_progression_bar_element')
+            element.classList.add('js-cursor_hover')
             element.style.width = `${100 / projects_info.length}vw`
+            element.style.transform = `translateX(${(100 / projects_info.length)*key}vw)`
             this.$project_progression_bar_container.appendChild(element)
+            element.addEventListener(
+                'click',
+                ()=>{
+                    if(project_number != key && transition_ready == true){
+                        project_number = key-1
+                        this.down()
+                        this.scrolling()
+                    }
+                }
+            )
         }
     }
 
     // Scrolling update progression bar
     progression_bar_update(){
         const $progression_bar = document.querySelector('.js-project_progression_bar')
-        for(const key in projects_info){
-            if (key <= project_number) {
-                // $progression_bar.style.transform = `translateX(0)`
-                $progression_bar.style.setProperty('--number_of_project', projects_info.length)
-                $progression_bar.style.setProperty('--project_number', project_number+1)
-            }
-            if (key > project_number){
-            }
-        }
-        // let progression_bar_level = -(100 / projects_info.length)
-        // const progression_bar_animation = setInterval(
-        //     ()=>{
-        //         progression_bar_level += this.progression_bar_power
-                
-                
-        //         if (progression_bar_level >= 0){
-        //             clearInterval(progression_bar_animation)
-        //             console.log(stop);
-                    
-        //         }
-        //         else{
-                    
-        //             progression_bar_level += (100 / projects_info.length)/100
-        //             this.$progression_bar_projects[project_number].style.transform = `translateX(${progression_bar_level}vw)`
-        //         }
-        //     }, 20
-        // )
+        $progression_bar.style.setProperty('--number_of_project', projects_info.length)
+        $progression_bar.style.setProperty('--project_number', project_number+1)
     }
 // CODE ICI LA PROCHAINE FOIS
 // JE VEUX FAIRE UNE ANIMATION DE DEPLACEMENT DE LA PROGRESS BAR
