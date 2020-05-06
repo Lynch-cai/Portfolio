@@ -272,12 +272,22 @@ html
     background: #0B0E14
     display: flex
     justify-content: flex-start
-    .project_progression_bar_active
+    .project_progression_bar_element
         height: 10px
-        background: #E6AF2E
+        background: red
         opacity: 0
-        &.active
-            opacity: 1
+.project_progression_bar
+    --number_of_project: 0
+    --project_number: 0
+    position: absolute
+    z-index: 9999
+    bottom: 0
+    left: -100vw
+    transform: translate3d((calc((100vw/var(--number_of_project)*var(--project_number)))), 0, 0)
+    transition: transform 0.75s cubic-bezier(0.75, 0.01, 0.15, 0.99)
+    height: 10px
+    width: 100vw
+    background: #E6AF2E
 @keyframes scrolling_down
     0%
         transform: translateY(0)

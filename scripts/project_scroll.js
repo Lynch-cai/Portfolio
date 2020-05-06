@@ -65,7 +65,7 @@ class Scroll {
 
         this.$project_progression_bar_container = document.querySelector('.js-project_progression_bar_container')
         this.$progression_bar_projects
-        this.progression_bar_power = 0.1
+        this.progression_bar_power = 0.01
         this.init()
         this.next_project()
         this.mobile_touch()
@@ -252,27 +252,45 @@ class Scroll {
         // Create a div for each project
         for(const key in projects_info){
             let element = document.createElement('div')
-            element.classList.add('project_progression_bar_active')
+            element.classList.add('project_progression_bar_element')
             element.style.width = `${100 / projects_info.length}vw`
-            element.style.transform = `translateX(${-(100 / projects_info.length)}vw)`
             this.$project_progression_bar_container.appendChild(element)
         }
     }
 
     // Scrolling update progression bar
     progression_bar_update(){
-        this.$progression_bar_projects = this.$project_progression_bar_container.querySelectorAll('div')
+        const $progression_bar = document.querySelector('.js-project_progression_bar')
         for(const key in projects_info){
             if (key <= project_number) {
-                this.$progression_bar_projects[key].classList.add('active')
-                this.$progression_bar_projects[key].style.transform = `translateX(${this.progression_bar_power})`
+                // $progression_bar.style.transform = `translateX(0)`
+                $progression_bar.style.setProperty('--number_of_project', projects_info.length)
+                $progression_bar.style.setProperty('--project_number', project_number+1)
             }
             if (key > project_number){
-                this.$progression_bar_projects[key].classList.remove('active')
             }
         }
+        // let progression_bar_level = -(100 / projects_info.length)
+        // const progression_bar_animation = setInterval(
+        //     ()=>{
+        //         progression_bar_level += this.progression_bar_power
+                
+                
+        //         if (progression_bar_level >= 0){
+        //             clearInterval(progression_bar_animation)
+        //             console.log(stop);
+                    
+        //         }
+        //         else{
+                    
+        //             progression_bar_level += (100 / projects_info.length)/100
+        //             this.$progression_bar_projects[project_number].style.transform = `translateX(${progression_bar_level}vw)`
+        //         }
+        //     }, 20
+        // )
     }
-
+// CODE ICI LA PROCHAINE FOIS
+// JE VEUX FAIRE UNE ANIMATION DE DEPLACEMENT DE LA PROGRESS BAR
 
 
     // Mobile
