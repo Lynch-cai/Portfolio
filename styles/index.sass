@@ -65,8 +65,8 @@ html
                 flex-direction: column
                 justify-content: center
                 align-items: center
-                padding: 0 5rem 0 5rem
-                width: 3.5rem
+                text-align: center
+                width: 13.5rem
                 span
                     padding: 0.25rem
                     font-family: Taviraj
@@ -301,3 +301,83 @@ html
         transform: translate3d(0, -100vh, 0)
     100%
         transform: translate3d(0, 0vh, 0)
+
+
+
+// Media screen
+@media screen and (max-width: 680px)
+    .projects_container
+        .project_container
+            .project_content
+                .project_number
+                    width: 11.5rem
+                    font-size: 3.2rem
+        
+                .project_acronym
+                    width: 11.5rem
+                    span
+                        padding: 0.20rem
+                        font-size: 4rem
+                        line-height: 4.4rem
+            
+        
+                .project_view_button
+                    height: 4vh
+                    width: 11.5rem
+                    justify-content: left
+                    .project_view_start_arrow
+                        display: none
+                    .project_view_text
+                        font-size: 0.96rem
+                        transform: translateX(0) // -2.85rem , 1.1rem
+                    .project_view_end_arrow_container
+                        display: none
+                
+                        img
+                            height: 0.4rem
+                            width: auto
+                .project_view_button:hover
+                    .project_view_text
+                        transform: translateX(0)
+            
+                    .project_view_end_arrow
+                        transform: scaleX(0)
+
+
+@media screen and (max-width: 420px)
+    .projects_container
+        .project_container
+            .project_content
+                .project_number
+                    width: 8rem
+                    font-size: 2.56rem
+        
+                .project_acronym
+                    width: 8rem
+                    span
+                        padding: 0.20rem
+                        font-size: 3.2rem
+                        line-height: 3.52rem
+            
+        
+                .project_view_button
+                    height: 4vh
+                    width: 8rem
+                    justify-content: left
+                    .project_view_start_arrow
+                        display: none
+                    .project_view_text
+                        font-size: 0.96rem
+                        transform: translateX(0) // -2.85rem , 1.1rem
+                    .project_view_end_arrow_container
+                        display: none
+                
+                        img
+                            height: 0.4rem
+                            width: auto
+                .project_view_button:hover
+                    .project_view_text
+                        transform: translateX(0)
+            
+                    .project_view_end_arrow
+                        transform: scaleX(0)
