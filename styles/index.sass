@@ -7,30 +7,41 @@ html
     width: 100vw
     overflow: hidden
     position: relative
+    // .project_transition_page
+    //     position: absolute
+    //     left: -50vw
+    //     top: 150vh
+    //     width: 200vw
+    //     height: 200vh
+    //     // background: #111
+    //     transform: translateY(0)
+    //     transition: transform 1.75s cubic-bezier(0.25, 0.75, 0.15, 0.85), opacity 0.3s ease-in-out
+    //     will-change: transform
+    //     z-index: 2000
+    // .project_transition_page.active
+    //     transform: translate3d(0, -100%, 0)
+    // .project_transition_page.fade_out
+    //     opacity: 0
+    // .project_transition_page_01
+    //     background: white
+    //     transform: rotate(10deg)
+    // .project_transition_page_02
+    //     background: #E6AF2E
+    //     transform: rotate(-10deg)
+    // .project_transition_page_03
+    //     background: #0B0E14
+    //     transform: rotate(10deg)
     .project_transition_page
+        z-index: 1050
         position: absolute
-        left: -50vw
-        top: 150vh
-        width: 200vw
-        height: 200vh
-        // background: #111
-        transform: translateY(0)
-        transition: transform 1.75s cubic-bezier(0.25, 0.75, 0.15, 0.85), opacity 0.3s ease-in-out
-        will-change: transform
-        z-index: 2000
-    .project_transition_page.active
-        transform: translate3d(0, -100%, 0)
-    .project_transition_page.fade_out
-        opacity: 0
-    .project_transition_page_01
-        background: white
-        transform: rotate(10deg)
-    .project_transition_page_02
-        background: #E6AF2E
-        transform: rotate(-10deg)
-    .project_transition_page_03
-        background: #0B0E14
-        transform: rotate(10deg)
+        left: 0
+        bottom: -100vh
+        width: 100vw
+        height: 100vh
+        background: #111
+        &.active
+            animation: transition_animation 1.5s cubic-bezier(0.75, 0.01, 0.15, 0.99) alternate
+
     .project_container
         position: relative
         width: 100vw
@@ -305,3 +316,12 @@ html
     100%
         transform: translateY(0.7rem)
         opacity: 0
+@keyframes transition_animation
+    0%
+        transform: translate3d(0, 0, 0)
+    40%
+        transform: translate3d(0, -100vh, 0)
+    60%
+        transform: translate3d(0, -100vh, 0)
+    100%
+        transform: translate3d(0, 0vh, 0)

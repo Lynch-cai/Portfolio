@@ -1,7 +1,6 @@
 // Declaring Variables
 let scroll_direction = '' // top, down, right, left
 let scroll_power = ''
-let project_number = 0
 let transition_ready = true
 
 // Fetch projects informations
@@ -52,7 +51,7 @@ class Scroll {
     constructor(){
         this.$projects_container = document.querySelector('.js-projects_container')
         this.$project_container = this.$projects_container.querySelector('.js-project_container')
-        this.$transition_page = this.$projects_container.querySelectorAll('.js-project_transition_page')
+        this.$transition_page = this.$projects_container.querySelector('.js-project_transition_page')
 
 
         this.$project_content = this.$project_container.querySelector('.js-project_content')
@@ -66,6 +65,7 @@ class Scroll {
         this.$project_progression_bar_container = document.querySelector('.js-project_progression_bar_container')
         this.$progression_bar_projects
         this.progression_bar_power = 0.01
+        this.project_number = 0
         this.init()
         this.next_project()
         this.mobile_touch()
@@ -104,11 +104,11 @@ class Scroll {
     // If user scroll up
     up(){
         if (transition_ready){
-            if (project_number <= projects_info.length - 1 && project_number > 0){
-                project_number -= 1
+            if (this.project_number <= projects_info.length - 1 && this.project_number > 0){
+                this.project_number -= 1
             }
             else {
-                project_number = projects_info.length - 1
+                this.project_number = projects_info.length - 1
             }
         }
     }
@@ -118,91 +118,17 @@ class Scroll {
     // If user scroll down
     down(){
         if (transition_ready){
-            if (project_number < projects_info.length - 1){
-                project_number += 1
+            if (this.project_number < projects_info.length - 1){
+                this.project_number += 1
             }
             else {
-                project_number = 0
+                this.project_number = 0
             }
         }
     }
 
-
-
-
     // If user scroll
     scrolling(){
-        // Transition page
-        // If the transition is ready do the transition
-        if (transition_ready){
-            transition_ready = false
-
-            // Do the transition
-            this.$transition_page[0].classList.add('active')
-            setTimeout(
-                ()=>{
-                    this.$transition_page[1].classList.add('active')
-                }, 150
-            )
-            setTimeout(
-                ()=>{
-                    this.$transition_page[2].classList.add('active')
-                }, 300
-            )
-
-            // Reset transition
-            setTimeout(
-                ()=>{
-                    change_page_project_info()
-
-                    // Display none transition pages (0,1) & fade out (2)
-                    this.$transition_page[0].style.display = 'none'
-                    this.$transition_page[1].style.display = 'none'
-                    this.$transition_page[2].classList.add('fade_out')
-
-
-                    // Display none transition pages (2)
-                    setTimeout(
-                        ()=>{
-                            this.$transition_page[2].style.display = 'none'
-                            setTimeout(
-                                ()=>{
-                                    // reset fade out (2)
-                                    this.$transition_page[2].classList.remove('fade_out')
-                                }, 250
-                            )
-                        }, 300 // opacity transition time
-                    )
-
-                    // Reset pos of transition pages (both)
-                    setTimeout(
-                        ()=>{
-                            for (let i = 0; i < this.$transition_page.length; i++){
-                                this.$transition_page[i].classList.remove('active')
-                            }
-
-                            // Display block transition pages (both)
-                            setTimeout(
-                                ()=>{
-                                    for (let i = 0; i < this.$transition_page.length; i++){
-                                        this.$transition_page[i].style.display = 'block'
-                                    }
-
-                                  // Set transition ready to true
-                                  setTimeout(
-                                      ()=>{
-                                          transition_ready = true
-                                      }, 500
-                                  )
-
-                                }, 250
-                            )
-                        }, 100
-                    )
-                }, 1000
-            )
-        }
-
         // Change page info
         const change_page_project_info = ()=>{
             // Remove span from last project
@@ -212,30 +138,42 @@ class Scroll {
             }
 
             // Create span acronym for project_number
-            for (let i = 0; i < projects_info[project_number].acronym.length; i++){
+            for (let i = 0; i < projects_info[this.project_number].acronym.length; i++){
                 const letter = document.createElement('span')
-                letter.innerHTML = projects_info[project_number].acronym[i]
+                letter.innerHTML = projects_info[this.project_number].acronym[i]
                 this.$project_acronym.appendChild(letter)
             }
 
             // Set first project background
-            this.$project_background.style.backgroundImage = `url('${projects_info[project_number].background_url}')`
+            this.$project_background.style.backgroundImage = `url('${projects_info[this.project_number].background_url}')`
 
             // Set number of the project
-            if (project_number < 10){
-                this.$project_number.innerText = `0${project_number+1}`
+            if (this.project_number < 10){
+                this.$project_number.innerText = `0${this.project_number+1}`
             }
             else {
-                this.$project_number.innerText = project_number + 1
+                this.$project_number.innerText = this.project_number + 1
             }
 
             // Set link of the project
-            this.$project_link.setAttribute('href', projects_info[project_number].project_url)
+            this.$project_link.setAttribute('href', projects_info[this.project_number].project_url)
         }
-        this.progression_bar_update()
+        
+        // Transition page
+        // If the transition is ready do the transition
+        if (transition_ready){
+            transition_ready = false
+            this.$transition_page.classList.add('active')
+            setTimeout(()=>{
+                change_page_project_info()
+                this.progression_bar_update()
+                setTimeout(()=>{
+                    transition_ready = true
+                    this.$transition_page.classList.remove('active')
+                }, 750)
+            }, 750)
+        }
     }
-
-
 
     next_project(){
         this.$project_scroll_text.addEventListener(
@@ -260,8 +198,8 @@ class Scroll {
             element.addEventListener(
                 'click',
                 ()=>{
-                    if(project_number != key && transition_ready == true){
-                        project_number = key-1
+                    if(this.project_number != key && transition_ready == true){
+                        this.project_number = key-1
                         this.down()
                         this.scrolling()
                     }
@@ -274,7 +212,7 @@ class Scroll {
     progression_bar_update(){
         const $progression_bar = document.querySelector('.js-project_progression_bar')
         $progression_bar.style.setProperty('--number_of_project', projects_info.length)
-        $progression_bar.style.setProperty('--project_number', project_number+1)
+        $progression_bar.style.setProperty('--project_number', this.project_number+1)
     }
 // CODE ICI LA PROCHAINE FOIS
 // JE VEUX FAIRE UNE ANIMATION DE DEPLACEMENT DE LA PROGRESS BAR
