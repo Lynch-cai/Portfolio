@@ -15,8 +15,12 @@ html
         width: 100vw
         height: 100vh
         background: #0B0E14
-        &.active
-            animation: transition_animation 1.5s cubic-bezier(0.75, 0.01, 0.15, 0.99) alternate
+        &.scroll_down
+            animation: transition_scrolling_down 1.5s cubic-bezier(0.75, 0.01, 0.15, 0.99) alternate
+        &.scroll_up
+            animation: transition_scrolling_down 1.5s cubic-bezier(0.75, 0.01, 0.15, 0.99) reverse
+
+
 
     .project_container
         position: relative
@@ -47,7 +51,7 @@ html
 
         span
             color: white
-            font-family: lato
+            font-family: worksans
 
         .project_content
             display: flex
@@ -57,8 +61,8 @@ html
                 display: flex
                 justify-content: flex-end
                 width: 13.5rem
-                font-weight: 500
-                font-size: 4rem
+                font-weight: 400
+                font-size: 5rem
     
             .project_acronym
                 display: flex
@@ -99,7 +103,7 @@ html
                     font-weight: 300
                     font-size: 1.2rem
                     color: white
-                    font-family: 'lato'
+                    font-family: worksans
                     text-decoration: none
                     transform: translateX(-2.85rem) // -2.85rem , 1.1rem
                     transition: transform 0.75s cubic-bezier(0.75, 0.01, 0.15, 0.99)
@@ -159,7 +163,7 @@ html
         z-index: 1000
         width: 10rem
         height: 3rem
-        font-family: lato
+        font-family: worksans
         font-weight: 300
         font-size: 1.2rem
         color: white
@@ -232,7 +236,7 @@ html
             top: 39%
             width: 5rem
             color: white
-            font-family: lato
+            font-family: worksans
             font-weight: 300
             font-size: 0.75rem
             opacity: 0
@@ -292,7 +296,7 @@ html
     100%
         transform: translateY(0.7rem)
         opacity: 0
-@keyframes transition_animation
+@keyframes transition_scrolling_down
     0%
         transform: translate3d(0, 0, 0)
     40%
@@ -300,7 +304,7 @@ html
     60%
         transform: translate3d(0, -100vh, 0)
     100%
-        transform: translate3d(0, 0vh, 0)
+        transform: translate3d(0, -200vh, 0)
 
 
 

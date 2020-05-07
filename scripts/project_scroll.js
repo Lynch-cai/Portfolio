@@ -61,6 +61,7 @@ class Scroll {
         this.$project_background = this.$project_container.querySelector('.js-project_background') // change class to change background
 
         this.$project_scroll_text = document.querySelector('.js-project_scroll_text')
+        this.scroll_direction = 'down'
 
         this.$project_progression_bar_container = document.querySelector('.js-project_progression_bar_container')
         this.$progression_bar_projects
@@ -104,6 +105,7 @@ class Scroll {
     // If user scroll up
     up(){
         if (transition_ready){
+            this.scroll_direction = 'up'
             if (this.project_number <= projects_info.length - 1 && this.project_number > 0){
                 this.project_number -= 1
             }
@@ -118,6 +120,7 @@ class Scroll {
     // If user scroll down
     down(){
         if (transition_ready){
+            this.scroll_direction = 'down'
             if (this.project_number < projects_info.length - 1){
                 this.project_number += 1
             }
@@ -163,13 +166,19 @@ class Scroll {
         // If the transition is ready do the transition
         if (transition_ready){
             transition_ready = false
-            this.$transition_page.classList.add('active')
+            if (this.scroll_direction == 'up') {
+                this.$transition_page.classList.add('scroll_up')
+            }
+            else{
+                this.$transition_page.classList.add('scroll_down')
+            }
             setTimeout(()=>{
                 change_page_project_info()
                 this.progression_bar_update()
                 setTimeout(()=>{
                     transition_ready = true
-                    this.$transition_page.classList.remove('active')
+                    this.$transition_page.classList.remove('scroll_up')
+                    this.$transition_page.classList.remove('scroll_down')
                 }, 750)
             }, 750)
         }
@@ -199,8 +208,8 @@ class Scroll {
                 'click',
                 ()=>{
                     if(this.project_number != key && transition_ready == true){
-                        this.project_number = key-1
-                        this.down()
+                        this.project_number < key ? this.scroll_direction = 'down' : this.scroll_direction = 'up'
+                        this.project_number = parseInt(key)
                         this.scrolling()
                     }
                 }
