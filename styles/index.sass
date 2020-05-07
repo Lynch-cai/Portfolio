@@ -39,14 +39,14 @@ html
             background-repeat: no-repeat
             background-size: cover
             object-fit: cover
-            opacity: 0.10
+            opacity: 0.15
             filter: blur(0.2rem) grayscale(10%) 
             transform: scale(1.15)
             transition: filter 0.4s ease-in-out, opacity 1s ease-in-out
             will-change: opacity, transform, filter
 
         .project_background.active
-            filter: blur(0px)
+            filter: blur(0px) grayscale(0)
             opacity: 0.2
 
         span
