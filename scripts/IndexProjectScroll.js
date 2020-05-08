@@ -18,23 +18,23 @@ $(function(){
         if (transition_ready){
             if (event.deltaY > 0){
                 o += 'up';
-                scroll.up()
+                index_project_scroll.up()
             }
             else if (event.deltaY < 0){
                 o += 'down';
-                scroll.down()
+                index_project_scroll.down()
             }
             if (event.deltaX > 0){
                 o += 'right';
-                scroll.down()
+                index_project_scroll.down()
             }
             else if (event.deltaX < 0){
                 o += 'left';
-                scroll.up()
+                index_project_scroll.up()
             }
             scroll_direction = o
             scroll_power = event.deltaFactor
-            scroll.scrolling()
+            index_project_scroll.scrolling()
         }
     };
     $(document)
@@ -47,7 +47,7 @@ $(function(){
 
 
 // Scroll action
-class Scroll {
+class IndexProjectScroll {
     constructor(){
         this.$projects_container = document.querySelector('.js-projects_container')
         this.$project_container = this.$projects_container.querySelector('.js-project_container')
@@ -274,4 +274,4 @@ class Scroll {
         )
     }
 }
-const scroll = new Scroll()
+const index_project_scroll = new IndexProjectScroll()

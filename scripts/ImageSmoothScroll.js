@@ -1,4 +1,4 @@
-class SmoothScroll{
+export default class SmoothScroll{
     constructor($img_container){
         this.$img_container = document.querySelector(`.${$img_container}`)
         this.$img = this.$img_container.querySelector('img')
@@ -55,5 +55,3 @@ class SmoothScroll{
         img_scroll()
     }
 }
-
-const about_profile_img = new SmoothScroll('profile_img_container')

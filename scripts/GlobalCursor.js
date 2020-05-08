@@ -1,4 +1,4 @@
-class Cursor{
+class GlobalCursor{
     constructor(){
         this.$cursor_container = document.querySelector('.js-global_cursor')
         this.$cursor_dot = this.$cursor_container.querySelector('.js-cursor_dot')
@@ -201,4 +201,4 @@ class Cursor{
         })
     }
 }
-const cursor = new Cursor()
+const cursor = new GlobalCursor()

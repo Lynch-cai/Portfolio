@@ -1,4 +1,4 @@
-class Parallax{
+class IndexParallax{
     constructor(){
         this.ratioX = ''
         this.ratioY = ''
@@ -92,4 +92,4 @@ class Parallax{
         )
     }
 }
-const parallax = new Parallax()
+const index_parallax = new IndexParallax()

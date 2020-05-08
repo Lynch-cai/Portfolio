@@ -1,4 +1,4 @@
-class Loading{
+class IndexLoadingPage{
     constructor(){
         this.$loading_page = document.querySelector('.js-loading_page')
         this.$logo = this.$loading_page.querySelector('.js-loading_page_logo')
@@ -100,5 +100,4 @@ class Loading{
         }
     }
 }
-
-const loading = new Loading()
+const index_loading_page = new IndexLoadingPage()
