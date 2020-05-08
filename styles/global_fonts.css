@@ -51,3 +51,8 @@
     src: url("/fonts/WorkSans-Medium.ttf") format("truetype");
     font-weight: 500;
 }
+@font-face {
+    font-family: "Worksans";
+    src: url("/fonts/WorkSans-SemiBold.ttf") format("truetype");
+    font-weight: 600;
+}
