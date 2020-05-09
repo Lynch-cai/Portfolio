@@ -25,7 +25,7 @@ html
             img
                 object-fit: cover
                 width: 100%
-                height: 35rem
+                height: inherit
         .about_intro_content_container
             width: 35rem
             margin-left: 7.5rem
@@ -60,7 +60,6 @@ html
                     font-weight: 300
                     font-size: 2.25rem
             .about_section_content_container
-                width: 35rem
                 margin: 0 0 5rem 7.5rem
                 display: flex
                 justify-content: space-between
@@ -141,3 +140,24 @@ html
                                     font-family: worksans
                                     font-weight: 400
                                     font-size: 1.125rem
+
+
+// Media screen
+@media screen and (max-width: 1200px)
+    .about_container
+        // Intro section
+        .about_intro_container
+            width: 50rem
+            .about_intro_profile_container
+                width: 17.5rem
+                height: 26.25rem
+                img
+                    height: inherit
+            .about_intro_content_container
+                width: 30.5rem
+                margin-left: 2rem
+        // Main section
+        .about_main_container
+            width: 50rem
+            height: 20rem
+            margin-left: 0

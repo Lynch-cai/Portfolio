@@ -1,6 +1,6 @@
 // Declaring Variables
 let scroll_direction = '' // top, down, right, left
-let scroll_power = ''
+let scroll_power = 0
 let transition_ready = true
 
 // Fetch projects informations

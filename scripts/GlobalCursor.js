@@ -35,7 +35,6 @@ class GlobalCursor{
             transform_scale_power: 0.01
         }
 
-        let previousTime = Date.now()
 
         let circle_bounce_step = '00'
         let circle_bounce_key = 0
@@ -54,13 +53,14 @@ class GlobalCursor{
 
 
         // FUNCTION each frame (animation)
+        let previousime = Date.now()
         const animation_loop = ()=>{
             window.requestAnimationFrame(animation_loop)
             
             // GET time for each frame
             const time = Date.now()
-            const delta = time - previousTime
-            previousTime = time
+            const delta = time - previousime
+            previousime = time
 
             // GET $cursor_circle position
             cursor_circle.x += (cursor.x - cursor_circle.x) * (cursor_circle.follow_power * delta)

@@ -33,7 +33,7 @@ class IndexParallax{
     view_project(){
 
         // DECLARE previewTime (usefull to get the time between each frame) & view_project_active (usefull to change scale)
-        let previousTime = Date.now()
+        let previous_time = Date.now()
         let view_project_active = false
 
         // FUNCTION each frame (animation)
@@ -42,8 +42,8 @@ class IndexParallax{
 
             // GET time for each frame
             const time = Date.now()
-            const delta = time - previousTime
-            previousTime = time
+            const delta = time - previous_time
+            previous_time = time
 
 
             // Calculate parallax movement
