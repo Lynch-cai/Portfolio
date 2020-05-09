@@ -161,3 +161,34 @@ html
             width: 50rem
             height: 20rem
             margin-left: 0
+
+
+@media screen and (max-width: 800px)
+    .about_container
+        // Intro section
+        .about_intro_container
+            width: 100%
+            flex-direction: column
+            align-items: space-between
+            .about_intro_profile_container
+                width: 75vw
+                height: calc(75vw/4*7)
+
+            .about_intro_content_container
+                width: 100%
+                margin-left: 0
+                .about_intro_text_hello
+                    left: 5rem
+                    top: -10rem
+                    font-size: 9vw
+                .about_intro_text_presentation
+                    margin: 3rem 0 5rem 0
+
+        // Main section 
+        .about_main_container
+            width: 100%
+            .about_section_container
+                .about_section_content_container
+                    margin: 0 0 5rem 0rem
+
+
