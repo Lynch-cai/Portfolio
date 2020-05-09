@@ -15,9 +15,7 @@ export default class GlobalScrollElementDirection{
         document.addEventListener(
             'scroll',
             ()=>{
-                let scroll_y_pos = window.scrollY
-                console.log(scroll_y_pos)
-                
+                const scroll_y_pos = window.scrollY
                 if (sizes.width > this.max_width && this.start_at <= scroll_y_pos) {
                     this.direction == 'right' ? this.$scroll_this_text.style.transform = `translateX(${(scroll_y_pos - this.start_at)*this.scroll_power}px)` : ''
                     this.direction == 'left' ? this.$scroll_this_text.style.transform = `translateX(${(scroll_y_pos - this.start_at)*-this.scroll_power}px)` : ''

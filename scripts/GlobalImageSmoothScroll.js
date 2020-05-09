@@ -1,4 +1,4 @@
-export default class SmoothScroll{
+export default class GlobalImageSmoothScroll{
     constructor($img_container){
         this.$img_container = document.querySelector(`.${$img_container}`)
         this.$img = this.$img_container.querySelector('img')

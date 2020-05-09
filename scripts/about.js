@@ -1,5 +1,5 @@
-import SmoothScroll from './ImageSmoothScroll.js'
-const smooth_scroll_profile_img = new SmoothScroll('js-about_intro_profile_container')
+import GlobalImageSmoothScroll from './GlobalImageSmoothScroll.js'
+const smooth_scroll_profile_img = new GlobalImageSmoothScroll('js-about_intro_profile_container')
 
 import GlobalScrollElementDirection from './GlobalScrollElementDirection.js'
 const about_intro_text_hello_scroll = new GlobalScrollElementDirection('js-about_intro_text_hello', 0, 800, 'left', 1.2)
