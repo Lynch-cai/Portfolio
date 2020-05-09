@@ -24,11 +24,12 @@ export default class SmoothScroll{
                 const img_movement = img_translate_strength*height_diff
 
                 // Transform Scale
-                const img_scale_strength = 4 // lower value = higher scale
+                const img_scale_strength = 2 // lower value = higher scale
                 const img_scale = 1+(Math.abs(img_appear)/img_diff)/img_scale_strength
                 
                 // APPLY
                 this.$img.style.transform = `translateY(${img_movement}px) scale(${img_scale})`
+                this.$img_container.style.transform = `translateY(${img_movement/2}px)`
             }
         }
 

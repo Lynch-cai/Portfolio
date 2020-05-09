@@ -223,8 +223,6 @@ class IndexProjectScroll {
         $progression_bar.style.setProperty('--number_of_project', projects_info.length)
         $progression_bar.style.setProperty('--project_number', this.project_number+1)
     }
-// CODE ICI LA PROCHAINE FOIS
-// JE VEUX FAIRE UNE ANIMATION DE DEPLACEMENT DE LA PROGRESS BAR
 
 
     // Mobile
