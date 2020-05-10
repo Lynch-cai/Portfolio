@@ -1,7 +1,6 @@
 // Declaring Variables
 let scroll_direction = '' // top, down, right, left
 let scroll_power = 0
-let transition_ready = true
 
 // Fetch projects informations
 let projects_info;
@@ -51,7 +50,7 @@ class IndexProjectScroll {
     constructor(){
         this.$projects_container = document.querySelector('.js-projects_container')
         this.$project_container = this.$projects_container.querySelector('.js-project_container')
-        this.$transition_page = this.$projects_container.querySelector('.js-project_transition_page')
+        this.$transition_page = document.querySelector('.js-global_transition_page')
 
 
         this.$project_content = this.$project_container.querySelector('.js-project_content')

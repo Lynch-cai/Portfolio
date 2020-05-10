@@ -1,27 +1,11 @@
 html
     background: #0B0E14
     height: 100%
-
 .projects_container
     height: 100vh
     width: 100vw
     overflow: hidden
     position: relative
-    .project_transition_page
-        z-index: 1050
-        position: absolute
-        left: 0
-        bottom: -100vh
-        width: 100vw
-        height: 100vh
-        background: #0B0E14
-        &.scroll_down
-            animation: transition_scrolling_down 1.5s cubic-bezier(0.75, 0.01, 0.15, 0.99) alternate
-        &.scroll_up
-            animation: transition_scrolling_down 1.5s cubic-bezier(0.75, 0.01, 0.15, 0.99) reverse
-
-
-
     .project_container
         position: relative
         width: 100vw
@@ -296,15 +280,7 @@ html
     100%
         transform: translateY(0.7rem)
         opacity: 0
-@keyframes transition_scrolling_down
-    0%
-        transform: translate3d(0, 0, 0)
-    40%
-        transform: translate3d(0, -100vh, 0)
-    60%
-        transform: translate3d(0, -100vh, 0)
-    100%
-        transform: translate3d(0, -200vh, 0)
+
 
 
 

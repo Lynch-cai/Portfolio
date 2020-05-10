@@ -11,6 +11,7 @@
     <link rel="stylesheet" href="styles/global_header_nav.css">
     <link rel="stylesheet" href="styles/index_loading_page.css">
     <link rel="stylesheet" href="styles/index.css">
+    <link rel="stylesheet" href="styles/global_transition.css">
 </head>
 <body>
     <!-- Cursor -->
@@ -23,18 +24,18 @@
         <!-- Nav bar -->
         <nav class="header_nav_container">
             <!-- Logo & Name -->
-            <a class="header_nav_logo js-cursor_hover" href="#home">
+            <a class="header_nav_logo js-cursor_hover">
                 <img src="images/logo_white.svg" alt="Lynch Cai's logo.">
                 <span>Lynch</span>
             </a>
             <!-- Menu -->
             <ul class="header_nav_pages js-cursor_hover">
-                <li><a href="index.html">
+                <li><a class="js-header_nav_work">
                     <div>
                         <span data_word="Work">Work</span>
                     </div>
                 </a></li>
-                <li><a href="about.html">
+                <li><a class="js-header_nav_about">
                     <div>
                         <span data_word="About">About</span>
                     </div>
@@ -64,10 +65,13 @@
                 </div>
             </div>
         </div>
+
+        <!-- Transition page -->
+        <div class="global_transition_page_container">
+            <div class="global_transition_page js-global_transition_page"></div>
+        </div>
+
         <div class="projects_container js-projects_container">
-            <!-- Transition page -->
-            <div class="project_transition_page js-project_transition_page"></div>
-            
             <!-- Project -->
             <div class="project_container js-project_container">
 
@@ -124,12 +128,13 @@
 
     </main>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-
     <script src="scripts/jquery.mousewheel.js"></script>
     <script src="scripts/GlobalCursor.js"></script>
     <script src="scripts/GlobalResize.js"></script>
+    <script type="module" src="scripts/index.js"></script>
     <script src="scripts/IndexParallax.js"></script>
     <script src="scripts/IndexProjectScroll.js"></script>
     <script src="scripts/IndexLoadingPage.js"></script>
+    <script src="scripts/GlobalLandingPageTransition.js"></script>
 </body>
 </html>
