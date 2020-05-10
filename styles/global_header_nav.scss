@@ -19,7 +19,7 @@
         display: flex;
         align-items: center;
         justify-content: space-between;
-        font-family: 'worksans', sans-serif;
+        font-family: 'Work Sans', sans-serif;
         z-index: inherit;
         // logo & text
         .header_nav_logo{
@@ -34,6 +34,7 @@
             z-index: inherit;
             text-decoration: none;
             color: white;
+            font-weight: 400;
             img{
                 max-width: 1.125rem;
                 margin-right: 0.625rem;
@@ -58,7 +59,6 @@
                     justify-content: center;
                     align-items: center;
                     color: white;
-                    font-weight: 300;
                     div{
                         overflow: hidden;
                         position: relative;
@@ -66,6 +66,8 @@
                             display: inline-block;
                             transition: transform 0.5s cubic-bezier(1, 0.25, 0, 0.75);
                             will-change: transform;
+                            font-weight: 600;
+
                         }
                         span:after{
                             content: attr(data_word);
