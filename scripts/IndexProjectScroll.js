@@ -166,18 +166,18 @@ class IndexProjectScroll {
         if (transition_ready){
             transition_ready = false
             if (this.scroll_direction == 'up') {
-                this.$transition_page.classList.add('scroll_up')
+                this.$transition_page.classList.add('scroll_up_complete')
             }
             else{
-                this.$transition_page.classList.add('scroll_down')
+                this.$transition_page.classList.add('scroll_up_complete')
             }
             setTimeout(()=>{
                 change_page_project_info()
                 this.progression_bar_update()
                 setTimeout(()=>{
                     transition_ready = true
-                    this.$transition_page.classList.remove('scroll_up')
-                    this.$transition_page.classList.remove('scroll_down')
+                    this.$transition_page.classList.remove('scroll_up_complete')
+                    this.$transition_page.classList.remove('scroll_up_complete')
                 }, 750)
             }, 750)
         }

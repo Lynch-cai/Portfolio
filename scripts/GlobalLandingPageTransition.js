@@ -8,16 +8,15 @@ class GlobalLandingPageTransition{
         this.init()
     }
     init(){
-        this.$transition_page.style.bottom = '0px'
         let stateCheck = setInterval(() => {
             if (document.readyState === 'complete') {
                 clearInterval(stateCheck);
                 // document ready
-                this.$transition_page.classList.add('scroll_down')
+                this.$transition_page.classList.add('scroll_down_half')
                 setTimeout(
                     ()=>{
-                        this.$transition_page.style.bottom = '-100%'
-                        this.$transition_page.classList.remove('scroll_down')
+                        this.$transition_page.style.bottom = '-100vh'
+                        this.$transition_page.classList.remove('scroll_down_half')
                         transition_ready = true
                     }, 750
                 )

@@ -9,7 +9,7 @@ export default class GlobalTransitionChangePage{
         this.$change_page_button.addEventListener(
             'click',
             ()=>{
-                this.$transition_page.classList.add('scroll_down')
+                this.$transition_page.classList.add('scroll_down_half')
                 setTimeout(
                     ()=>{
                         window.location.href = this.page_link
