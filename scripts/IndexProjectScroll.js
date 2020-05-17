@@ -169,7 +169,7 @@ class IndexProjectScroll {
                 this.$transition_page.classList.add('scroll_up_complete')
             }
             else{
-                this.$transition_page.classList.add('scroll_up_complete')
+                this.$transition_page.classList.add('scroll_down_complete')
             }
             setTimeout(()=>{
                 change_page_project_info()
@@ -177,7 +177,7 @@ class IndexProjectScroll {
                 setTimeout(()=>{
                     transition_ready = true
                     this.$transition_page.classList.remove('scroll_up_complete')
-                    this.$transition_page.classList.remove('scroll_up_complete')
+                    this.$transition_page.classList.remove('scroll_down_complete')
                 }, 750)
             }, 750)
         }
