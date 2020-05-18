@@ -9,5 +9,5 @@ const about_section_title_experiences_scroll = new GlobalScrollElementDirection(
 
 // Change page
 import GlobalTransitionChangePage from './GlobalTransitionChangePage.js'
-let change_page_to_work = new GlobalTransitionChangePage('js-header_nav_work', 'index.html')
-let change_page_to_home = new GlobalTransitionChangePage('js-header_nav_logo', 'index.html')
+let change_page_to_work = new GlobalTransitionChangePage('js-header_nav_work', '/')
+let change_page_to_home = new GlobalTransitionChangePage('js-header_nav_logo', '/')
