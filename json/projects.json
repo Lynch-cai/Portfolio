@@ -1,12 +1,12 @@
 [
     {
         "acronym": "FCS",
-        "project_url": "https://lynchcai.github.io/Focusly/",
+        "project_url": "https://lynch-cai.github.io/Focusly/",
         "background_url": "../images/projects/focusly/index_focusly.png"
     },
     {
         "acronym": "POP",
-        "project_url": "https://lynchcai.github.io/Popup/",
+        "project_url": "https://lynch-cai.github.io/Popup/",
         "background_url": "../images/projects/popup/index_popup.jpg"
     },
     {
@@ -26,7 +26,7 @@
     },
     {
         "acronym": "BF",
-        "project_url": "https://lynchcai.github.io/Bananaflix/",
+        "project_url": "https://lynch-cai.github.io/Bananaflix/",
         "background_url": "../images/projects/bananaflix/index_bananaflix.jpg"
     }
 ]
