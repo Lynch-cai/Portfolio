@@ -1,15 +1,5 @@
 [
     {
-        "acronym": "FCS",
-        "project_url": "https://focusly.lynch-cai.com/",
-        "background_url": "../images/projects/focusly/index_focusly.png"
-    },
-    {
-        "acronym": "POP",
-        "project_url": "https://popup.lynch-cai.com/",
-        "background_url": "../images/projects/popup/index_popup.jpg"
-    },
-    {
         "acronym": "JH",
         "project_url": "https://www.jeanhuleu.fr/",
         "background_url": "../images/projects/jeanhuleu/index_jeanhuleu.jpg"
@@ -20,13 +10,23 @@
         "background_url": "../images/projects/chocolia/index_chocolia.jpg"
     },
     {
-        "acronym": "G&H",
-        "project_url": "http://goodandhuman.ovh/",
-        "background_url": "../images/projects/goodandhuman/index_goodandhuman.jpg"
+        "acronym": "FCS",
+        "project_url": "https://focusly.lynch-cai.com/",
+        "background_url": "../images/projects/focusly/index_focusly.png"
+    },
+    {
+        "acronym": "POP",
+        "project_url": "https://popup.lynch-cai.com/",
+        "background_url": "../images/projects/popup/index_popup.jpg"
     },
     {
         "acronym": "BF",
         "project_url": "https://bananaflix.lynch-cai.com/",
         "background_url": "../images/projects/bananaflix/index_bananaflix.jpg"
+    },
+    {
+        "acronym": "G&H",
+        "project_url": "http://goodandhuman.ovh/",
+        "background_url": "../images/projects/goodandhuman/index_goodandhuman.jpg"
     }
 ]
