@@ -1,5 +1,15 @@
 [
     {
+        "acronym": "DF",
+        "project_url": "https://www.due-facile.fr/",
+        "background_url": "../images/projects/duefacile/index_duefacile.jpg"
+    },
+    {
+        "acronym": "VS",
+        "project_url": "https://www.vasa.fr/",
+        "background_url": "../images/projects/vasa/index_vasa.jpg"
+    },
+    {
         "acronym": "JH",
         "project_url": "https://www.jeanhuleu.fr/",
         "background_url": "../images/projects/jeanhuleu/index_jeanhuleu.jpg"
