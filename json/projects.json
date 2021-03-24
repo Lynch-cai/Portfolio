@@ -2,22 +2,22 @@
     {
         "acronym": "DF",
         "project_url": "https://www.due-facile.fr/",
-        "background_url": "../images/projects/duefacile/index_duefacile.jpg"
+        "background_url": "../images/projects/duefacile/index_duefacile.webp"
     },
     {
         "acronym": "VS",
         "project_url": "https://www.vasa.fr/",
-        "background_url": "../images/projects/vasa/index_vasa.jpg"
+        "background_url": "../images/projects/vasa/index_vasa.webp"
     },
     {
         "acronym": "JH",
         "project_url": "https://www.jeanhuleu.fr/",
-        "background_url": "../images/projects/jeanhuleu/index_jeanhuleu.jpg"
+        "background_url": "../images/projects/jeanhuleu/index_jeanhuleu.webp"
     },
     {
         "acronym": "CCL",
         "project_url": "https://www.chocolia.eu/",
-        "background_url": "../images/projects/chocolia/index_chocolia.jpg"
+        "background_url": "../images/projects/chocolia/index_chocolia.webp"
     },
     {
         "acronym": "FCS",
@@ -27,6 +27,6 @@
     {
         "acronym": "POP",
         "project_url": "https://popup.lynch-cai.com/",
-        "background_url": "../images/projects/popup/index_popup.jpg"
+        "background_url": "../images/projects/popup/index_popup.webp"
     }
 ]
