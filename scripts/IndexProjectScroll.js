@@ -84,13 +84,18 @@ class IndexProjectScroll {
             }
             // If json loaded create letter
             else {
+                // Preload imgs
+                for (let i = 0; i < projects_info.length; i++) {
+                    var img=new Image();
+                    img.src=projects_info[i].background_url;
+                }
                 // Create & set first project letters
                 for (let i = 0; i < projects_info[0].acronym.length; i++){
                     const letter = document.createElement('span')
                     letter.innerHTML = projects_info[0].acronym[i]
                     this.$project_acronym.appendChild(letter)
                 }
-                // Set first project background
+
                 this.$project_background.style.backgroundImage = `url('${projects_info[0].background_url}')`
                 this.json_loaded = true
                 this.progression_bar_create()
