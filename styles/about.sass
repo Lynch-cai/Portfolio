@@ -5,6 +5,10 @@
 html
     background: #0B0E14
     height: 100%
+    *
+        &::selection
+            background: #E6AF2E
+            color: #fff
 
 .about_container
     width: 90vw
@@ -93,6 +97,7 @@ html
                             margin-bottom: 2rem
                             &:nth-child(2n)
                                 color: #E6AF2E
+
                             
                             .about_experiences_short_text
                                 width: 35%
