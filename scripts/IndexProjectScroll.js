@@ -80,7 +80,7 @@ class IndexProjectScroll {
             // If json not loaded, retry
             if (projects_info == null){
                 this.init()
-                console.error("Json information not loaded, retry in 100ms..");
+                // console.error("Json information not loaded, retry in 100ms..");
             }
             // If json loaded create letter
             else {
