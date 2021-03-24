@@ -28,15 +28,5 @@
         "acronym": "POP",
         "project_url": "https://popup.lynch-cai.com/",
         "background_url": "../images/projects/popup/index_popup.jpg"
-    },
-    {
-        "acronym": "BF",
-        "project_url": "https://bananaflix.lynch-cai.com/",
-        "background_url": "../images/projects/bananaflix/index_bananaflix.jpg"
-    },
-    {
-        "acronym": "G&H",
-        "project_url": "http://goodandhuman.ovh/",
-        "background_url": "../images/projects/goodandhuman/index_goodandhuman.jpg"
     }
 ]
