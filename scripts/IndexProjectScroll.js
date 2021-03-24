@@ -97,6 +97,7 @@ class IndexProjectScroll {
                 }
 
                 this.$project_background.style.backgroundImage = `url('${projects_info[0].background_url}')`
+                this.$project_link.setAttribute('href', projects_info[0].project_url)
                 this.json_loaded = true
                 this.progression_bar_create()
                 this.progression_bar_update()
