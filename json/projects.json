@@ -10,6 +10,11 @@
         "background_url": "../images/projects/vasa/index_vasa.webp"
     },
     {
+        "acronym": "RI",
+        "project_url": "https://www.restaurant-imperial.fr/",
+        "background_url": "../images/projects/vasa/index_restaurant_imperial.webp"
+    },
+    {
         "acronym": "JH",
         "project_url": "https://www.jeanhuleu.fr/",
         "background_url": "../images/projects/jeanhuleu/index_jeanhuleu.webp"
